@@ -9,6 +9,6 @@ gradient = SubResource( 1 )
 [node name="Node2D" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 695, 267 )
+position = Vector2( 397, 379 )
 scale = Vector2( 0.29126, 349.375 )
 texture = SubResource( 2 )
