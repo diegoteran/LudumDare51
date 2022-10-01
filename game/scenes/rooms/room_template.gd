@@ -39,6 +39,7 @@ func _on_AreaUp_mouse_exited():
 	mouse_exited()
 
 
+
 func _on_AreaRight_mouse_entered():
 	mouse_in_area = "RIGHT"
 

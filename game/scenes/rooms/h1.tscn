@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
+
+[node name="Room" instance=ExtResource( 1 )]
+adjacent_room_names = {
+"DOWN": "h2",
+"LEFT": "d3",
+"RIGHT": "c3",
+"UP": ""
+}

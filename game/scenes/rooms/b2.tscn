@@ -5,10 +5,7 @@
 [node name="Room" instance=ExtResource( 1 )]
 adjacent_room_names = {
 "DOWN": "",
-"LEFT": "room_test",
-"RIGHT": "",
+"LEFT": "b1",
+"RIGHT": "b3",
 "UP": ""
 }
-
-[node name="Sprite" parent="." index="0"]
-modulate = Color( 0.87451, 0.372549, 0.772549, 1 )

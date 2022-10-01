@@ -3,10 +3,9 @@
 [ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
 
 [node name="Room" instance=ExtResource( 1 )]
-modulate = Color( 0.25098, 0.792157, 0.34902, 1 )
 adjacent_room_names = {
 "DOWN": "",
 "LEFT": "",
-"RIGHT": "",
-"UP": "room_test"
+"RIGHT": "d2",
+"UP": ""
 }
