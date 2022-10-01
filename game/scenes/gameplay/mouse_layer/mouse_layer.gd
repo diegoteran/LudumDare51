@@ -1,5 +1,17 @@
 extends Node2D
 
+enum {
+	NONE,
+	UP,
+	RIGHT,
+	DOWN,
+	LEFT,
+	CIRCLE,
+	HOURGLASS,
+	FINAL
+}
+
+const TELEPORT_PATTERN = [RIGHT, DOWN, UP, LEFT, DOWN]
 
 onready var sprite = $Sprite
 onready var particles = $Sprite/Particles2D
@@ -8,13 +20,7 @@ onready var tween = $Tween
 var mouse_pressed = false
 var current_area = ""
 var current_pattern = ""
-
-enum {
-	NONE,
-	LEVER,
-	CIRCLE,
-	HOURGLASS
-}
+var patterns = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,7 +53,15 @@ func stop_mouse():
 	tween.interpolate_property(sprite, "modulate:a", sprite.modulate.a, 0, 0.3)
 	tween.start()
 	
-	var pattern = analyze_pattern()
+	var _pattern = analyze_pattern()
+	check_patterns()
+
+func check_patterns():
+	if patterns.size() > TELEPORT_PATTERN.size():
+		patterns = []
+	if patterns == TELEPORT_PATTERN:
+		print("TELEPOOOOORT")
+		patterns = []
 	
 
 func analyze_pattern():
@@ -57,9 +71,23 @@ func analyze_pattern():
 		print("NICE TRY BITCH")
 		return NONE
 	
-	if is_lever(current_pattern):
-		print("LEVER")
-		return LEVER
+	if is_up(current_pattern):
+		print("UP")
+		return UP
+	
+	if is_right(current_pattern):
+		print("LEVER or RIGHT")
+		return RIGHT
+	
+	if is_down(current_pattern):
+		print("DOWN")
+		return DOWN
+	
+	if is_left(current_pattern):
+		print("LEFT")
+		return LEFT
+	
+	patterns = []
 	
 	if is_hourglass(current_pattern):
 		print("HOURGLASS")
@@ -71,8 +99,27 @@ func analyze_pattern():
 	
 	return NONE
 
-func is_lever(pattern):
+func is_up(pattern):
+	if len(pattern) <= 3 and pattern[0] in "CD" and pattern[-1] in "AB":
+		patterns.append(UP)
+		return true
+	return false
+
+func is_right(pattern):
+	if len(pattern) <= 3 and pattern[0] in "AC" and pattern[-1] in "BD":
+		patterns.append(RIGHT)
+		return true
+	return false
+
+func is_down(pattern):
 	if len(pattern) <= 3 and pattern[0] in "AB" and pattern[-1] in "CD":
+		patterns.append(DOWN)
+		return true
+	return false
+
+func is_left(pattern):
+	if len(pattern) <= 3 and pattern[0] in "BD" and pattern[-1] in "CA":
+		patterns.append(LEFT)
 		return true
 	return false
 
