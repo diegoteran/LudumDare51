@@ -18,10 +18,10 @@ anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="UI/CenterContainer"]
-margin_left = 320.0
-margin_top = 320.0
-margin_right = 320.0
-margin_bottom = 320.0
+margin_left = 960.0
+margin_top = 540.0
+margin_right = 960.0
+margin_bottom = 540.0
 
 [node name="RoomHolder" parent="UI/CenterContainer/HBoxContainer" instance=ExtResource( 3 )]
 margin_right = 0.0

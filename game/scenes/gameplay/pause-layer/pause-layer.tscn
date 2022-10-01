@@ -8,26 +8,12 @@
 pause_mode = 2
 script = ExtResource( 2 )
 
-[node name="PressESCToOpenMenu" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -244.5
-margin_top = 24.0
-margin_right = 244.5
-margin_bottom = 38.0
-theme = ExtResource( 3 )
-custom_colors/font_color = Color( 0.788235, 0.788235, 0.788235, 1 )
-text = "Pause: ESC (keyboard) or START button (joypad)"
-
 [node name="PauseButton" type="TextureButton" parent="."]
 margin_left = 16.0
 margin_top = 16.0
 margin_right = 78.0
 margin_bottom = 78.0
 texture_normal = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Pause" type="Control" parent="."]
 visible = false
