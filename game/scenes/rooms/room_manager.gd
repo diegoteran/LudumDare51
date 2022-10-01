@@ -57,6 +57,8 @@ func leave_room_to(dir):
 	remove_adjacent_rooms_except(dir)
 
 func set_adjacent_rooms() -> void:
+	print("******ENTERED ROOM*******")
+	print("This room "+ current_room.name +" generated :")
 	for dir in dirs:
 		add_adjacent_room(dir)
 
@@ -65,6 +67,7 @@ func add_adjacent_room(dir):
 		print(adjacent_room_names[dir])
 		adjacent_rooms[dir] = load(ROOM_DIR + adjacent_room_names[dir] + ".tscn").instance()
 		add_child(adjacent_rooms[dir])
+		adjacent_rooms[dir].name = adjacent_room_names[dir]
 		adjacent_rooms[dir].position += dir_to_vec[dir] * ROOM_SIZE
 
 func remove_adjacent_rooms_except(exception) -> void:
@@ -74,7 +77,12 @@ func remove_adjacent_rooms_except(exception) -> void:
 			adjacent_rooms.erase(dir)
 
 func move(dir):
+	if !(dir in adjacent_rooms.keys()):
+		print("No room " + dir)
+		return
+	
 	if tween.is_active():
+		print("tween active")
 		return
 	
 	tween.interpolate_property(current_room, "position", current_room.position, dir_to_vec[dir] * ROOM_SIZE * -1, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
