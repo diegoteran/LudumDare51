@@ -5,6 +5,7 @@ const BG_PATH_2 = "/Assets/Room_"
 const BG_PATH_3 = ".png"
 
 export var adjacent_room_names = {"UP" : "", "RIGHT" : "", "DOWN" : "", "LEFT" : ""}
+export var locked_rooms: PoolStringArray
 
 signal click_move(direction)
 
