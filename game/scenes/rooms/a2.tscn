@@ -9,6 +9,3 @@ adjacent_room_names = {
 "RIGHT": "a3",
 "UP": ""
 }
-
-[node name="CollisionShape2D" parent="AreaLeft" index="0"]
-position = Vector2( -310, 3 )

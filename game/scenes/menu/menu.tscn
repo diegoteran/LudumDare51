@@ -35,9 +35,10 @@ anchor_bottom = 1.0
 margin_bottom = -339.0
 
 [node name="Title" type="Label" parent="CenterContainer"]
-margin_top = 109.0
-margin_right = 733.0
-margin_bottom = 192.0
+margin_left = 593.0
+margin_top = 329.0
+margin_right = 1326.0
+margin_bottom = 412.0
 custom_fonts/font = SubResource( 5 )
 text = "Godot Game Template"
 uppercase = true

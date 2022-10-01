@@ -1,7 +1,7 @@
 extends Control
 
 const ROOM_DIR = "res://scenes/rooms/"
-const ROOM_SIZE = 640
+const ROOM_SIZE = Vector2(1080, 1920)
 
 export var CurrentRoomScene : PackedScene
 
@@ -69,7 +69,7 @@ func add_adjacent_room(dir):
 		adjacent_rooms[dir] = load(ROOM_DIR + adjacent_room_names[dir] + ".tscn").instance()
 		add_child(adjacent_rooms[dir])
 		adjacent_rooms[dir].name = adjacent_room_names[dir]
-		adjacent_rooms[dir].position += dir_to_vec[dir] * ROOM_SIZE
+		adjacent_rooms[dir].position += dir_to_vec[dir] * (ROOM_SIZE.x if dir in ("UP, DOWN") else ROOM_SIZE.y)
 
 func remove_adjacent_rooms_except(exception) -> void:
 	for dir in dirs:
@@ -86,8 +86,8 @@ func move(dir):
 		print("tween active")
 		return
 	
-	tween.interpolate_property(current_room, "position", current_room.position, dir_to_vec[dir] * ROOM_SIZE * -1, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	tween.interpolate_property(adjacent_rooms[dir], "position", adjacent_rooms[dir].position, Vector2.ZERO, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	tween.interpolate_property(current_room, "position", current_room.position, dir_to_vec[dir_contra[dir]] * (ROOM_SIZE.x if dir in ("UP, DOWN") else ROOM_SIZE.y), 1.5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
+	tween.interpolate_property(adjacent_rooms[dir], "position", adjacent_rooms[dir].position, Vector2.ZERO, 1.5, Tween.TRANS_CUBIC, Tween.EASE_IN_OUT)
 	tween.start()
 	
 	changed_rooms(dir)
