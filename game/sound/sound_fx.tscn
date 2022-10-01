@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sound/sound_fx.gd" type="Script" id=1]
+
+[node name="SoundFX" type="Node"]
+script = ExtResource( 1 )
+
+[node name="2D" type="Node" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="2D"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="2D"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer2D3" type="AudioStreamPlayer2D" parent="2D"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer2D4" type="AudioStreamPlayer2D" parent="2D"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer2D5" type="AudioStreamPlayer2D" parent="2D"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer2D6" type="AudioStreamPlayer2D" parent="2D"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer2D7" type="AudioStreamPlayer2D" parent="2D"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer2D8" type="AudioStreamPlayer2D" parent="2D"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer2D9" type="AudioStreamPlayer2D" parent="2D"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer2D10" type="AudioStreamPlayer2D" parent="2D"]
+bus = "SFX"
+
+[node name="Menu" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"
+
+[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="Menu"]
+bus = "SFX"

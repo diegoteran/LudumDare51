@@ -11,6 +11,7 @@ func _ready():
 
 
 func _on_PlayButton_pressed() -> void:
+	play_menu_select()
 	var params = {
 		show_progress_bar = true,
 		"a_number": 10,
@@ -26,6 +27,7 @@ func _on_PlayButton_pressed() -> void:
 
 func _on_ExitButton_pressed() -> void:
 	# gently shutdown the game
+	play_menu_select()
 	var transitions = get_node_or_null("/root/Transitions")
 	if transitions:
 		transitions.fade_in({
@@ -34,3 +36,17 @@ func _on_ExitButton_pressed() -> void:
 		yield(transitions.anim, "animation_finished")
 		yield(get_tree().create_timer(0.3), "timeout")
 	get_tree().quit()
+
+
+func _on_PlayButton_mouse_entered():
+	play_menu_move()
+
+
+func _on_ExitButton_mouse_entered():
+	play_menu_move()
+	
+func play_menu_move():
+	SoundFx.play_menu("menu_move", rand_range(0.2, 0.4))
+	
+func play_menu_select():
+	SoundFx.play_menu("menu_select", rand_range(0.2, 0.4))

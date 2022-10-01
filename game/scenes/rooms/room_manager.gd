@@ -32,6 +32,7 @@ func _ready():
 	set_adjacent_rooms()
 
 func changed_rooms(dir):
+	play_transition(dir)
 	leave_room_to(dir)
 	
 	current_room.state = BORDER
@@ -90,3 +91,6 @@ func move(dir):
 	tween.start()
 	
 	changed_rooms(dir)
+
+func play_transition(dir):
+	SoundFx.play("transition", dir_to_vec[dir] * 100, rand_range(0.35, 0.4))

@@ -35,10 +35,9 @@ anchor_bottom = 1.0
 margin_bottom = -339.0
 
 [node name="Title" type="Label" parent="CenterContainer"]
-margin_left = 145.0
-margin_top = 89.0
-margin_right = 878.0
-margin_bottom = 172.0
+margin_top = 109.0
+margin_right = 733.0
+margin_bottom = 192.0
 custom_fonts/font = SubResource( 5 )
 text = "Godot Game Template"
 uppercase = true
@@ -145,5 +144,7 @@ grow_horizontal = 0
 custom_colors/font_color = Color( 0.886275, 0.87451, 0.87451, 1 )
 text = "Developer 3"
 
+[connection signal="mouse_entered" from="VBoxContainer/PlayButton" to="." method="_on_PlayButton_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/ExitButton" to="." method="_on_ExitButton_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/ExitButton" to="." method="_on_ExitButton_pressed"]
