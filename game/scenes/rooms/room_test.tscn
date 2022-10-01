@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 108, 213.5 )
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 176.0
+
+[node name="Room" instance=ExtResource( 1 )]
+modulate = Color( 0.231373, 0.564706, 0.333333, 1 )
+adjacent_room_names = {
+"DOWN": "room_first",
+"LEFT": "",
+"RIGHT": "room_right",
+"UP": ""
+}
+
+[node name="CollisionShape2D" parent="AreaRight" index="0"]
+position = Vector2( 322, -4 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="AreaDown" index="0"]
+position = Vector2( -3, 308 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="AreaLeft" index="0"]
+position = Vector2( -310, 3 )
