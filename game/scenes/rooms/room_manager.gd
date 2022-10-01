@@ -85,8 +85,8 @@ func move(dir):
 		print("tween active")
 		return
 	
-	tween.interpolate_property(current_room, "position", current_room.position, dir_to_vec[dir] * ROOM_SIZE * -1, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
-	tween.interpolate_property(adjacent_rooms[dir], "position", adjacent_rooms[dir].position, Vector2.ZERO, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+	tween.interpolate_property(current_room, "position", current_room.position, dir_to_vec[dir] * ROOM_SIZE * -1, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	tween.interpolate_property(adjacent_rooms[dir], "position", adjacent_rooms[dir].position, Vector2.ZERO, 1, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	tween.start()
 	
 	changed_rooms(dir)
