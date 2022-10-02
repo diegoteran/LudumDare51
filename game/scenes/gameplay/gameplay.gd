@@ -2,6 +2,8 @@ extends Node
 
 var elapsed = 0
 
+export var Z_ROOM : PackedScene
+
 # `pre_start()` is called when a scene is loaded.
 # Use this function to receive params from `Game.change_scene(params)`.
 func pre_start(params):
@@ -38,3 +40,9 @@ func start_dialog(timeline):
 
 func _process(delta):
 	elapsed += delta
+
+func to_z():
+	var instance = Z_ROOM.instance()
+	add_child(instance)
+	print("some animation here")
+	$RoomManager.queue_free()

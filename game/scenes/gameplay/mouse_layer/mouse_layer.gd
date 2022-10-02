@@ -57,17 +57,29 @@ func stop_mouse():
 	particles.emitting = false
 	
 	var pattern = analyze_pattern()
-	check_patterns()
+	check_patterns(pattern)
 	
 	if pattern == RIGHT:
 		Globals.start_second_timer()
 
-func check_patterns():
-	if patterns.size() > TELEPORT_PATTERN.size():
-		patterns = []
-	if patterns == TELEPORT_PATTERN:
-		print("TELEPOOOOORT")
-		patterns = []
+func check_patterns(last_pattern):
+	
+	
+	if patterns.size() == TELEPORT_PATTERN.size():
+		if patterns == TELEPORT_PATTERN:
+			print("TELEPOOOOORT")
+			Globals.teleport_input()
+			patterns = []
+		else:
+			patterns = []
+	
+	else:
+		for i in range(patterns.size()):
+			if patterns[i] != TELEPORT_PATTERN[i]:
+				patterns = []
+				if last_pattern in TELEPORT_PATTERN:
+					patterns = [last_pattern]
+				return
 	
 
 func analyze_pattern():

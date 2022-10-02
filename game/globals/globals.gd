@@ -17,6 +17,8 @@ var successful_presses = 0;
 
 var operator_num = 34634643;
 
+var on_last_screen = false
+
 const SHIFT_AMOUNT = 15;
 
 signal seconds_left(seconds_left)
@@ -79,14 +81,15 @@ func _on_SecondTimer_timeout():
 	emit_signal("seconds_left",  seconds_left_to_cleanse)
 	
 	if seconds_left_to_cleanse == 0:
-		if one_fuckup_left:
+		if one_fuckup_left and !on_last_screen:
 			one_fuckup_left = false;
 			paused = true;
 			start_second_timer();
 			_get_gameplay().start_dialog("help")
 		else:
 			paused = true;
-			_get_gameplay().start_dialog("termination")
+			if !on_last_screen:
+				_get_gameplay().start_dialog("termination")
 		print("TEN SECONDS PASSED")
 
 func _on_DoorTimer_timeout():
@@ -94,3 +97,17 @@ func _on_DoorTimer_timeout():
 	emit_signal("door_timer")
 	if office_locked:
 		SoundFx.play_menu("close_door")
+
+func teleport_input():
+	on_last_screen = true
+	disable_all_timers()
+	set_ui()
+	_get_gameplay().to_z()
+
+func disable_all_timers():
+	world_timer.stop()
+	door_timer.stop()
+
+func set_ui():
+	# Maybe remove lever
+	pass
