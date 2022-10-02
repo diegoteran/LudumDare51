@@ -31,10 +31,11 @@ func _ready():
 	path = path.split(".")[0]
 	name = path
 	
-	setBackground()
+	set_background()
+	unlock_rooms()
 
 
-func setBackground():
+func set_background():
 	var directory = Directory.new();
 	var PATH_1 = BG_PATH_1 + name[0].capitalize() +  "-Final"
 	var doFileExists = directory.dir_exists(PATH_1)
@@ -51,6 +52,19 @@ func _process(_delta):
 			SoundFx.play_menu("locked_door")
 		else:
 			emit_signal("click_move", mouse_in_area)
+
+func unlock_rooms():
+	for room in Globals.unlocked_rooms[name]:
+		unlock_room(room)
+
+func unlock_room(room):
+	locked_rooms.remove(locked_rooms.find(room))
+	save_unlocked_room(room)
+	
+
+func save_unlocked_room(room_name):
+	if !(Globals.unlocked_rooms[name].has(room_name)):
+		Globals.unlocked_rooms[name].append(room_name)
 
 
 func _on_AreaUp_mouse_entered():

@@ -46,6 +46,8 @@ Transitions="*res://addons/game-template/transition/transition.tscn"
 Utils="*res://addons/game-template/utils.gd"
 SoundFx="*res://sound/sound_fx.tscn"
 JournalManager="*res://scenes/text/journal_manager.gd"
+Globals="*res://globals/globals.gd"
+SaveAndLoad="*res://globals/save_and_load.gd"
 
 [category]
 
