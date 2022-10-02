@@ -2,7 +2,9 @@ extends Node
 
 var sounds_path = "res://sound/sounds/"
 
+# Keep sorted please
 var sounds = {
+	"close_door" : load(sounds_path + "close_door.wav"),
 	"key_falls" : load(sounds_path + "key_falls.wav"),
 	"menu_move" : load(sounds_path + "menu_move.wav"),
 	"menu_select" : load(sounds_path + "menu_select.wav"),

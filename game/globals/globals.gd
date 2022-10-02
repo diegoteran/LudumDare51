@@ -11,6 +11,7 @@ var rooms_unlocked = false
 
 signal seconds_left(seconds_left)
 signal rooms_unlocked
+signal door_timer
 
 onready var world_timer = $WorldTimer
 onready var second_timer = $SecondTimer
@@ -52,3 +53,4 @@ func _on_SecondTimer_timeout():
 
 func _on_DoorTimer_timeout():
 	office_locked = !office_visited
+	emit_signal("door_timer")

@@ -1,10 +1,14 @@
 extends "res://scenes/rooms/room_template.gd"
 
+onready var door_office = $DoorOffice
 
 func _ready():
+# warning-ignore:return_value_discarded
 	Globals.connect("rooms_unlocked", self, "unlock")
+# warning-ignore:return_value_discarded
+	Globals.connect("door_timer", self, "door_timeout")
 	if Globals.office_locked:
-		pass
+		locked_rooms.append("LEFT")
 
 func unlock():
 	unlock_left()
@@ -14,9 +18,15 @@ func unlock_left():
 	if(locked_rooms.has("LEFT")):
 		SoundFx.play_menu("unlock_door")
 		unlock_room("LEFT")
+		door_office.open_door()
 
 func unlock_right():
 	if(locked_rooms.has("RIGHT")):
 		SoundFx.play_menu("unlock_door")
 		unlock_room("RIGHT")
-	
+
+func door_timeout():
+	if !Globals.office_visited:
+		SoundFx.play_menu("close_door")
+		door_office.close_door()
+		locked_rooms.append("LEFT")
