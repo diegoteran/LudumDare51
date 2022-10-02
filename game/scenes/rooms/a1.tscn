@@ -6,6 +6,12 @@
 
 [node name="Room" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+adjacent_room_names = {
+"DOWN": "",
+"LEFT": "h2",
+"RIGHT": "a2",
+"UP": ""
+}
 
 [node name="Flower" parent="." index="6" instance=ExtResource( 2 )]
 position = Vector2( -421, 12 )

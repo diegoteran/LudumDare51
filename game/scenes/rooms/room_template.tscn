@@ -17,6 +17,7 @@ extents = Vector2( 87.25, 321 )
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 2 )
+locked_rooms = PoolStringArray( "LEFT" )
 
 [node name="Background" type="Sprite" parent="."]
 texture = ExtResource( 1 )
