@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/objects/object_template.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/objects/object_flower.gd" type="Script" id=2]
-[ext_resource path="res://assets/Art/A-Final/Assets/Flower.png" type="Texture" id=3]
+[ext_resource path="res://assets/Art/A-Final/Assets/Door_closed.png" type="Texture" id=2]
+[ext_resource path="res://scenes/objects/object_door_left.gd" type="Script" id=3]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -73,21 +73,21 @@ void fragment() {
 resource_local_to_scene = true
 shader = SubResource( 1 )
 shader_param/color = Color( 0, 0, 0, 0 )
-shader_param/width = 4.738
-shader_param/pattern = 0
+shader_param/width = 6.607
+shader_param/pattern = 1
 shader_param/inside = false
 shader_param/add_margins = true
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 109, 200.5 )
+extents = Vector2( 169.5, 497 )
 
-[node name="Flower" instance=ExtResource( 1 )]
-script = ExtResource( 2 )
+[node name="DoorLeft" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2( 0, -149.5 )
+position = Vector2( -1.5, -13 )
 shape = SubResource( 3 )

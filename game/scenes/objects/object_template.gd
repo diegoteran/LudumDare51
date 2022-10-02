@@ -34,6 +34,5 @@ func _on_Area2D_mouse_exited():
 	mouse_in_object = false
 
 func object_clicked():
-	SoundFx.play_menu("menu_select")
 	# Dont add code here, inherit/extend this script and override in future objects.
 	pass
