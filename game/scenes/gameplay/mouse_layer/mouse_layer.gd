@@ -73,7 +73,7 @@ func check_patterns():
 func analyze_pattern():
 	print("Pattern generated: " + current_pattern)
 	
-	if len(current_pattern) > 10 or len(current_pattern) < 0:
+	if len(current_pattern) > 10 or len(current_pattern) <= 0:
 		print("NICE TRY BITCH")
 		return NONE
 	
@@ -97,6 +97,7 @@ func analyze_pattern():
 	
 	if is_hourglass(current_pattern):
 		print("HOURGLASS")
+		Globals.unlock_all_rooms()
 		return HOURGLASS
 	
 	if is_circle(current_pattern):

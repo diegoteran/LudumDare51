@@ -5,6 +5,7 @@ onready var animationPlayer = $AnimationPlayer
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Globals.connect("rooms_unlock", self, "unlock_left")
 	flower.connect("key_dropped", self, "on_key_dropped")
 
 func on_key_dropped():
@@ -13,9 +14,12 @@ func on_key_dropped():
 	
 		# Take key or dialog
 		yield(get_tree().create_timer(1), "timeout")
-	
-		SoundFx.play_menu("unlock_door")
-		unlock_room("LEFT")
+		unlock_left()
+		
+
+func unlock_left():
+	SoundFx.play_menu("unlock_door")
+	unlock_room("LEFT")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

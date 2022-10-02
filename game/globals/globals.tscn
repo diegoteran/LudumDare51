@@ -10,5 +10,9 @@ one_shot = true
 
 [node name="SecondTimer" type="Timer" parent="."]
 
+[node name="DoorTimer" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="timeout" from="WorldTimer" to="." method="_on_WorldTimer_timeout"]
 [connection signal="timeout" from="SecondTimer" to="." method="_on_SecondTimer_timeout"]
+[connection signal="timeout" from="DoorTimer" to="." method="_on_DoorTimer_timeout"]
