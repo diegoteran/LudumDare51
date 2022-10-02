@@ -10,11 +10,10 @@ var screws = [true, true, true, true]
 func _ready():
 	pass # Replace with function body.
 
-func _process(delta):
+func _process(_delta):
 	if not (true in screws):
 		Globals.lever_freed();
 		queue_free();
-	pass
 	
 
 func _on_LeverPull_mouse_entered():
@@ -47,25 +46,25 @@ func _input(event):
 		$AnimatedSprite.set_frame(0);
 
 
-func _on_screw1_input_event(viewport, event, shape_idx):
+func _on_screw1_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		screws[0] = false;
 		$screw.visible = false;
 
 
-func _on_screw2_input_event(viewport, event, shape_idx):
+func _on_screw2_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		screws[1] = false;
 		$screw2.visible = false;
 
 
-func _on_screw3_input_event(viewport, event, shape_idx):
+func _on_screw3_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		screws[2] = false;
 		$screw3.visible = false;
 
 
-func _on_screw4_input_event(viewport, event, shape_idx):
+func _on_screw4_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
 		screws[3] = false;
 		$screw4.visible = false;
