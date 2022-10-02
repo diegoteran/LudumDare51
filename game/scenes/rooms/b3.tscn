@@ -1,6 +1,23 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Art/B-Final/Assets/Room_b3.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+resource_local_to_scene = true
+extents = Vector2( 323.5, 73.5 )
+
+[sub_resource type="RectangleShape2D" id=2]
+resource_local_to_scene = true
+extents = Vector2( 80.75, 315 )
+
+[sub_resource type="RectangleShape2D" id=3]
+resource_local_to_scene = true
+extents = Vector2( 323, 57.375 )
+
+[sub_resource type="RectangleShape2D" id=4]
+resource_local_to_scene = true
+extents = Vector2( 94.25, 384.5 )
 
 [node name="Room" instance=ExtResource( 1 )]
 adjacent_room_names = {
@@ -9,3 +26,18 @@ adjacent_room_names = {
 "RIGHT": "h2",
 "UP": ""
 }
+
+[node name="Background" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="AreaUp" index="0"]
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D" parent="AreaRight" index="0"]
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D" parent="AreaDown" index="0"]
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D" parent="AreaLeft" index="0"]
+shape = SubResource( 4 )
