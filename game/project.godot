@@ -129,7 +129,7 @@ window/stretch/aspect="keep"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/game-template/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/dialogic/plugin.cfg", "res://addons/game-template/plugin.cfg" )
 
 [input]
 

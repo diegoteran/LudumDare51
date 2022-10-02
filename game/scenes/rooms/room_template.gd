@@ -58,7 +58,8 @@ func unlock_rooms():
 		unlock_room(room)
 
 func unlock_room(room):
-	locked_rooms.remove(locked_rooms.find(room))
+	if locked_rooms.has(room):
+		locked_rooms.remove(locked_rooms.find(room))
 	save_unlocked_room(room)
 	
 
