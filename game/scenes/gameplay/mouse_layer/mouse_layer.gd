@@ -55,8 +55,12 @@ func stop_mouse():
 	tween.start()
 	
 	particles.emitting = false
-	var _pattern = analyze_pattern()
+	
+	var pattern = analyze_pattern()
 	check_patterns()
+	
+	if pattern == RIGHT:
+		Globals.start_second_timer()
 
 func check_patterns():
 	if patterns.size() > TELEPORT_PATTERN.size():
@@ -69,7 +73,7 @@ func check_patterns():
 func analyze_pattern():
 	print("Pattern generated: " + current_pattern)
 	
-	if len(current_pattern) > 10:
+	if len(current_pattern) > 10 or len(current_pattern) < 0:
 		print("NICE TRY BITCH")
 		return NONE
 	

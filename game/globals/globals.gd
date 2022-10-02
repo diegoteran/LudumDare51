@@ -16,14 +16,15 @@ func _ready():
 	seconds_left_to_cleanse = 10
 	emit_signal("seconds_left",  10)
 	
-	second_timer.wait_time = 1
-	world_timer.wait_time = 60 * 5
+	second_timer.wait_time = 1.5
+	world_timer.wait_time = 60 * 5.0
 
 
 func start_world_timer():
 	world_timer.start()
 	
 func start_second_timer():
+	print("HUMANS CLEANSED")
 	second_timer.start()
 	seconds_left_to_cleanse = 10
 	emit_signal("seconds_left",  10)
