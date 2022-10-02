@@ -5,7 +5,8 @@ onready var animationPlayer = $AnimationPlayer
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Globals.connect("rooms_unlock", self, "unlock_left")
+# warning-ignore:return_value_discarded
+	Globals.connect("rooms_unlocked", self, "unlock_left")
 	flower.connect("key_dropped", self, "on_key_dropped")
 
 func on_key_dropped():

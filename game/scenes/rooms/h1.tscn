@@ -5,3 +5,9 @@
 
 [node name="Room" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+adjacent_room_names = {
+"DOWN": "h2",
+"LEFT": "d3",
+"RIGHT": "c3",
+"UP": ""
+}

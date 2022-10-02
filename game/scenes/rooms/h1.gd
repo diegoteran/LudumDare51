@@ -2,7 +2,7 @@ extends "res://scenes/rooms/room_template.gd"
 
 
 func _ready():
-	Globals.connect("rooms_unlock", self, "unlock")
+	Globals.connect("rooms_unlocked", self, "unlock")
 	if Globals.office_locked:
 		pass
 
