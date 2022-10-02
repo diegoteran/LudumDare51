@@ -5,12 +5,17 @@ var sounds_path = "res://sound/sounds/"
 # Keep sorted please
 var sounds = {
 	"close_door" : load(sounds_path + "close_door.wav"),
+	"down" : load(sounds_path + "down.wav"),
 	"key_falls" : load(sounds_path + "key_falls.wav"),
 	"menu_move" : load(sounds_path + "menu_move.wav"),
 	"menu_select" : load(sounds_path + "menu_select.wav"),
+	"left" : load(sounds_path + "left.wav"),
 	"locked_door" : load(sounds_path + "locked_door.wav"),
+	"right" : load(sounds_path + "right.wav"),
+	"tick" : load(sounds_path + "tick.wav"),
 	"transition" : load(sounds_path + "transition.wav"),
 	"unlock_door" : load(sounds_path + "unlock_door.wav"),
+	"up" : load(sounds_path + "up.wav"),
 }
 
 onready var sound_players = get_node("2D").get_children()

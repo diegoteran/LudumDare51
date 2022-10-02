@@ -58,9 +58,15 @@ func stop_mouse():
 	
 	var pattern = analyze_pattern()
 	check_patterns(pattern)
-	
+	check_sound(pattern)
 	if pattern == RIGHT:
-		Globals.start_second_timer()
+		Globals.lever_pulled()
+
+func check_sound(last_pattern):
+	if last_pattern in TELEPORT_PATTERN:
+		match last_pattern:
+			(RIGHT):
+				SoundFx.play_menu("right")
 
 func check_patterns(last_pattern):
 	

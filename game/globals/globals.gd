@@ -42,6 +42,7 @@ func _ready():
 	door_timer.wait_time = 45
 
 func unlock_all_rooms():
+	SoundFx.play_menu("unlock_door")
 	rooms_unlocked = true
 	emit_signal("rooms_unlocked")
 
@@ -80,6 +81,9 @@ func _on_WorldTimer_timeout():
 
 func _get_gameplay():
 	return get_tree().get_root().get_node("/root/Gameplay");
+
+func lever_pulled():
+	start_second_timer()
 
 func _on_SecondTimer_timeout():
 	if (paused):
@@ -120,5 +124,6 @@ func set_ui():
 	pass
 
 func change_time():
+	SoundFx.play_menu("tick")
 	is_night = !is_night
 	emit_signal("is_night", is_night)
