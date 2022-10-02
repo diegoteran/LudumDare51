@@ -15,6 +15,11 @@ onready var area_down = $AreaDown
 onready var area_left = $AreaLeft
 onready var bg = $Background
 
+onready var arrow_up = load("res://assets/Art/UI/Arrow_up.png")
+onready var arrow_down = load("res://assets/Art/UI/Arrow_down.png")
+onready var arrow_left = load("res://assets/Art/UI/Arrow_left.png")
+onready var arrow_right = load("res://assets/Art/UI/Arrow_right.png")
+
 enum {
 	CURRENT,
 	BORDER
@@ -70,34 +75,41 @@ func save_unlocked_room(room_name):
 
 func _on_AreaUp_mouse_entered():
 	mouse_in_area = "UP"
+	Input.set_custom_mouse_cursor(arrow_up)
 
 
 func _on_AreaUp_mouse_exited():
+	Input.set_custom_mouse_cursor(null)
 	mouse_exited()
-
 
 
 func _on_AreaRight_mouse_entered():
 	mouse_in_area = "RIGHT"
+	Input.set_custom_mouse_cursor(arrow_right)
 
 
 func _on_AreaRight_mouse_exited():
+	Input.set_custom_mouse_cursor(null)
 	mouse_exited()
 
 
 func _on_AreaDown_mouse_entered():
 	mouse_in_area = "DOWN"
+	Input.set_custom_mouse_cursor(arrow_down)
 
 
 func _on_AreaDown_mouse_exited():
+	Input.set_custom_mouse_cursor(null)
 	mouse_exited()
 
 
 func _on_AreaLeft_mouse_entered():
 	mouse_in_area = "LEFT"
+	Input.set_custom_mouse_cursor(arrow_left)
 
 
 func _on_AreaLeft_mouse_exited():
+	Input.set_custom_mouse_cursor(null)
 	mouse_exited()
 
 func mouse_exited():
