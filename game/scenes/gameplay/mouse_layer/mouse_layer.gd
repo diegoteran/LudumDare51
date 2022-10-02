@@ -14,7 +14,7 @@ enum {
 const TELEPORT_PATTERN = [RIGHT, DOWN, UP, LEFT, DOWN]
 
 onready var sprite = $Sprite
-onready var particles = $Sprite/Particles2D
+onready var particles = $Particles2D
 onready var tween = $Tween
 
 var mouse_pressed = false
@@ -37,13 +37,14 @@ func _process(_delta):
 	
 	if mouse_pressed:
 		sprite.position = get_global_mouse_position()
-#		particles.position = get_global_mouse_position()
+		particles.position = get_global_mouse_position()
 
 
 func start_mouse():
 	mouse_pressed = true
 	current_pattern = current_area
 	
+	particles.emitting = true
 	tween.interpolate_property(sprite, "modulate:a", sprite.modulate.a, 100, 0.3)
 	tween.start()
 
@@ -53,6 +54,7 @@ func stop_mouse():
 	tween.interpolate_property(sprite, "modulate:a", sprite.modulate.a, 0, 0.3)
 	tween.start()
 	
+	particles.emitting = false
 	var _pattern = analyze_pattern()
 	check_patterns()
 
