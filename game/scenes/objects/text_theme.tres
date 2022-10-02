@@ -5,7 +5,7 @@
 [sub_resource type="StyleBoxTexture" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 45
+size = 35
 font_data = ExtResource( 1 )
 
 [resource]

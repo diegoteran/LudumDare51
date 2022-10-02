@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/text/text_template.gd" type="Script" id=1]
 [ext_resource path="res://scenes/objects/text_theme.tres" type="Theme" id=2]
+[ext_resource path="res://assets/Art/Zoomed/Paper.png" type="Texture" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 960, 481 )
@@ -23,41 +24,50 @@ margin_bottom = 1165.0
 mouse_filter = 2
 color = Color( 0.286275, 0.25098, 0.25098, 0.682353 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 margin_left = -612.0
 margin_top = -543.0
 margin_right = 618.0
 margin_bottom = 424.0
-color = Color( 0.960784, 0.941176, 0.482353, 1 )
+color = Color( 1, 1, 1, 0 )
 
-[node name="ButtonRight" type="Button" parent="ColorRect"]
-margin_left = 1030.0
-margin_top = 877.0
-margin_right = 1230.0
-margin_bottom = 967.0
+[node name="TextureRect" type="TextureRect" parent="Background"]
+margin_left = -370.0
+margin_top = -30.0
+margin_right = 1589.0
+margin_bottom = 1118.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+
+[node name="ButtonRight" type="Button" parent="Background"]
+margin_left = 894.0
+margin_top = 910.0
+margin_right = 1094.0
+margin_bottom = 1000.0
 theme = ExtResource( 2 )
 text = "RIGHT"
 
-[node name="ButtonLeft" type="Button" parent="ColorRect"]
-margin_top = 877.0
-margin_right = 200.0
-margin_bottom = 967.0
+[node name="ButtonLeft" type="Button" parent="Background"]
+margin_left = 73.0
+margin_top = 898.0
+margin_right = 273.0
+margin_bottom = 988.0
 theme = ExtResource( 2 )
 text = "LEFT"
 
-[node name="Content" type="RichTextLabel" parent="ColorRect"]
-margin_left = 117.0
-margin_top = 83.0
-margin_right = 1102.0
-margin_bottom = 710.0
+[node name="Content" type="RichTextLabel" parent="Background"]
+margin_left = 122.0
+margin_top = 111.0
+margin_right = 1078.0
+margin_bottom = 894.0
 theme = ExtResource( 2 )
 text = "TEST TEXT"
 
-[node name="Page Count" type="RichTextLabel" parent="ColorRect"]
-margin_left = 536.0
-margin_top = 876.0
-margin_right = 692.0
-margin_bottom = 949.0
+[node name="Page Count" type="RichTextLabel" parent="Background"]
+margin_left = 535.0
+margin_top = 913.0
+margin_right = 691.0
+margin_bottom = 986.0
 theme = ExtResource( 2 )
 bbcode_enabled = true
 bbcode_text = "[center]1/1[/center]"
@@ -65,5 +75,5 @@ text = "1/1"
 scroll_active = false
 
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
-[connection signal="pressed" from="ColorRect/ButtonRight" to="." method="_on_ButtonRight_pressed"]
-[connection signal="pressed" from="ColorRect/ButtonLeft" to="." method="_on_ButtonLeft_pressed"]
+[connection signal="pressed" from="Background/ButtonRight" to="." method="_on_ButtonRight_pressed"]
+[connection signal="pressed" from="Background/ButtonLeft" to="." method="_on_ButtonLeft_pressed"]

@@ -19,9 +19,9 @@ func _ready():
 	numPages = pages.size();
 	
 	if numPages == 1:
-		$ColorRect/ButtonRight.visible = false;
-		$ColorRect/ButtonRight.disabled = true;
-		$"ColorRect/Page Count".visible = false;
+		$Background/ButtonRight.visible = false;
+		$Background/ButtonRight.disabled = true;
+		$"Background/Page Count".visible = false;
 	
 	update_page(currentPage);
 
@@ -51,25 +51,25 @@ func get_file_content(filepath):
 
 func update_page(page):
 	currentPage = page;
-	$ColorRect/Content.text = pages[currentPage];
+	$Background/Content.text = pages[currentPage];
 	
 	if discoverable_info.has(page):
 		for info in discoverable_info[page]:
 			JournalManager.add_info(info);
 	
-	$"ColorRect/Page Count".bbcode_text = "[center]" + str(currentPage+1) + "/" + str(numPages) + "[/center]";
+	$"Background/Page Count".bbcode_text = "[center]" + str(currentPage+1) + "/" + str(numPages) + "[/center]";
 	if currentPage == 0:
-		$ColorRect/ButtonLeft.visible = false;
-		$ColorRect/ButtonLeft.disabled = true;
+		$Background/ButtonLeft.visible = false;
+		$Background/ButtonLeft.disabled = true;
 	else:
-		$ColorRect/ButtonLeft.visible = true;
-		$ColorRect/ButtonLeft.disabled = false;
+		$Background/ButtonLeft.visible = true;
+		$Background/ButtonLeft.disabled = false;
 	if (currentPage+1) == numPages:
-		$ColorRect/ButtonRight.visible = false;
-		$ColorRect/ButtonRight.disabled = true;
+		$Background/ButtonRight.visible = false;
+		$Background/ButtonRight.disabled = true;
 	else:
-		$ColorRect/ButtonRight.visible = true;
-		$ColorRect/ButtonRight.disabled = false;
+		$Background/ButtonRight.visible = true;
+		$Background/ButtonRight.disabled = false;
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if (event is InputEventMouseButton && event.pressed):
