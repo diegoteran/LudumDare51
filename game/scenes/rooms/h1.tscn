@@ -2,11 +2,11 @@
 
 [ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/rooms/h1.gd" type="Script" id=2]
-[ext_resource path="res://scenes/objects/object_door_office.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/objects/object_door_bell.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/objects/room_h/object_door_office.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/objects/room_h/object_door_bell.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/Art/H-Final/Assets/Room_h1.png" type="Texture" id=5]
-[ext_resource path="res://scenes/objects/object_door_office_closed.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenes/objects/object_door_bell_open.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/objects/room_h/object_door_office_closed.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/objects/room_h/object_door_bell_open.tscn" type="PackedScene" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
