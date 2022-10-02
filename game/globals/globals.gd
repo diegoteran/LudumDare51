@@ -61,6 +61,8 @@ func unpause():
 	paused = false;
 
 func restart():
+	return;
+	#UNDO DEBUG
 	Game.restart_scene();
 
 func _on_WorldTimer_timeout():
