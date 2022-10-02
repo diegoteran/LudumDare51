@@ -8,7 +8,7 @@
 [node name="Gameplay" type="Node"]
 script = ExtResource( 5 )
 
-[node name="RoomHolder" parent="." instance=ExtResource( 3 )]
+[node name="RoomManager" parent="." instance=ExtResource( 3 )]
 margin_left = 960.0
 margin_top = 540.0
 margin_right = 960.0

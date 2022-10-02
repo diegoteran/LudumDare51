@@ -47,7 +47,10 @@ func _process(_delta):
 		return
 	
 	if Input.is_action_just_pressed("click") and mouse_in_area != "":
-		emit_signal("click_move", mouse_in_area)
+		if mouse_in_area in locked_rooms:
+			SoundFx.play_menu("locked_door")
+		else:
+			emit_signal("click_move", mouse_in_area)
 
 
 func _on_AreaUp_mouse_entered():

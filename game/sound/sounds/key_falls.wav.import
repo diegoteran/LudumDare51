@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/key_falls.wav-9eedd9605b6238fa442131f2d236553c.sample"
+
+[deps]
+
+source_file="res://sound/sounds/key_falls.wav"
+dest_files=[ "res://.import/key_falls.wav-9eedd9605b6238fa442131f2d236553c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

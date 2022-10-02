@@ -2,8 +2,6 @@ extends Node
 
 var elapsed = 0
 
-onready var current_room = $RoomHolder
-
 # `pre_start()` is called when a scene is loaded.
 # Use this function to receive params from `Game.change_scene(params)`.
 func pre_start(params):

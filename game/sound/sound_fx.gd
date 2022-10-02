@@ -3,8 +3,10 @@ extends Node
 var sounds_path = "res://sound/sounds/"
 
 var sounds = {
+	"key_falls" : load(sounds_path + "key_falls.wav"),
 	"menu_move" : load(sounds_path + "menu_move.wav"),
 	"menu_select" : load(sounds_path + "menu_select.wav"),
+	"locked_door" : load(sounds_path + "locked_door.wav"),
 	"transition" : load(sounds_path + "transition.wav"),
 	"unlock_door" : load(sounds_path + "unlock_door.wav"),
 }
