@@ -70,6 +70,10 @@ func restart():
 	#UNDO DEBUG
 	Game.restart_scene();
 
+func lever_freed():
+	print("Lever off wall")
+	pass;
+
 func _on_WorldTimer_timeout():
 	paused = true;
 	_get_gameplay().start_dialog("ShiftEnd")

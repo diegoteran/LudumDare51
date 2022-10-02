@@ -1,0 +1,120 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/objects/object_template.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Art/A-Final/Assets/Lever_2.png" type="Texture" id=2]
+[ext_resource path="res://assets/Art/A-Final/Assets/Lever_1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Art/A-Final/Assets/Lever_3.png" type="Texture" id=4]
+[ext_resource path="res://scenes/objects/room_a/wall_lever.gd" type="Script" id=5]
+[ext_resource path="res://assets/Art/A-Final/Assets/Screw.png" type="Texture" id=6]
+[ext_resource path="res://assets/shaders/outline_mat.tres" type="Material" id=7]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "leverPull",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 64.0078
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 19.4165
+
+[node name="Object2" instance=ExtResource( 1 )]
+script = ExtResource( 5 )
+
+[node name="Sprite" parent="." index="0"]
+visible = false
+material = ExtResource( 7 )
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+disabled = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
+material = ExtResource( 7 )
+frames = SubResource( 3 )
+animation = "leverPull"
+
+[node name="LeverPull" type="Area2D" parent="." index="3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeverPull" index="0"]
+position = Vector2( -263, -1 )
+shape = SubResource( 4 )
+
+[node name="screw" type="Sprite" parent="." index="4"]
+material = ExtResource( 7 )
+position = Vector2( -144, -140 )
+texture = ExtResource( 6 )
+
+[node name="screw1" type="Area2D" parent="screw" index="0"]
+position = Vector2( -1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="screw/screw1" index="0"]
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="screw2" type="Sprite" parent="." index="5"]
+material = ExtResource( 7 )
+position = Vector2( 145, -141 )
+texture = ExtResource( 6 )
+
+[node name="screw2" type="Area2D" parent="screw2" index="0"]
+position = Vector2( -1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="screw2/screw2" index="0"]
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="screw3" type="Sprite" parent="." index="6"]
+material = ExtResource( 7 )
+position = Vector2( 146, 147 )
+texture = ExtResource( 6 )
+
+[node name="screw3" type="Area2D" parent="screw3" index="0"]
+position = Vector2( -1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="screw3/screw3" index="0"]
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="screw4" type="Sprite" parent="." index="7"]
+material = ExtResource( 7 )
+position = Vector2( -146, 148 )
+texture = ExtResource( 6 )
+
+[node name="screw4" type="Area2D" parent="screw4" index="0"]
+position = Vector2( -1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="screw4/screw4" index="0"]
+shape = SubResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[connection signal="input_event" from="LeverPull" to="." method="_on_LeverPull_input_event"]
+[connection signal="mouse_entered" from="LeverPull" to="." method="_on_LeverPull_mouse_entered"]
+[connection signal="mouse_exited" from="LeverPull" to="." method="_on_LeverPull_mouse_exited"]
+[connection signal="input_event" from="screw/screw1" to="." method="_on_screw1_input_event"]
+[connection signal="input_event" from="screw2/screw2" to="." method="_on_screw2_input_event"]
+[connection signal="input_event" from="screw3/screw3" to="." method="_on_screw3_input_event"]
+[connection signal="input_event" from="screw4/screw4" to="." method="_on_screw4_input_event"]
