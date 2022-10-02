@@ -35,7 +35,10 @@ func _ready():
 
 
 func setBackground():
-	bg.texture = load(BG_PATH_1 + name[0].capitalize() + BG_PATH_2 + name + BG_PATH_3)
+	var directory = Directory.new();
+	var PATH_1 = BG_PATH_1 + name[0].capitalize() +  "-Final"
+	var doFileExists = directory.dir_exists(PATH_1)
+	bg.texture = load(BG_PATH_1 + name[0].capitalize() + ("-Final" if doFileExists else "") + BG_PATH_2 + name + BG_PATH_3)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -72,13 +72,12 @@ void fragment() {
 resource_local_to_scene = true
 shader = SubResource( 1 )
 shader_param/color = Color( 0, 0, 0, 0 )
-shader_param/width = 1.0
-shader_param/pattern = 0
+shader_param/width = 6.607
+shader_param/pattern = 1
 shader_param/inside = false
 shader_param/add_margins = true
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 49.2544
 
 [node name="Object" type="Node2D"]
 script = ExtResource( 2 )

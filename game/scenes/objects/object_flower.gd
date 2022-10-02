@@ -1,10 +1,9 @@
 extends "res://scenes/objects/object_template.gd"
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var click_counter = 0
 
+signal key_dropped
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,4 +12,7 @@ func _ready():
 
 func object_clicked():
 	print("I AM FLOWER")
-	pass
+	click_counter += 1
+	
+	if click_counter == 3:
+		emit_signal("key_dropped")
