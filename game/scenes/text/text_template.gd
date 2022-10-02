@@ -1,25 +1,61 @@
 extends Node2D
 
 var currentPage = 0;
-var pages = ["test", "test 2", "This is the third page"]
+var pages = ["Test", "Cool"]
+var file_pages = [];
+var discoverable_info = {}
+
 var numPages;
 
 func _ready():
+	setup_pages();
+	if  pages.size() == 0:
+		if file_pages.size() > 0:
+			read_pages_from_files();
+			
+	if pages.size() == 0:
+		queue_free();
+	
 	numPages = pages.size();
 	
-	if numPages < 0:
-		queue_free();
 	if numPages == 1:
 		$ColorRect/ButtonRight.visible = false;
 		$ColorRect/ButtonRight.disabled = true;
 		$"ColorRect/Page Count".visible = false;
 	
 	update_page(currentPage);
-	
+
+func setup_pages():
+	pass;
+
+func read_pages_from_files():
+	for filepath in file_pages:
+		var new_page = get_file_content(filepath);
+		if new_page.length() > 0:
+			pages.append(new_page);
+
+func get_file_content(filepath):
+	var f = File.new()
+	var returnString = "";
+	var full_filepath = "res://assets/text/" + filepath;
+	f.open(full_filepath, File.READ)
+	var index = 1
+	while not f.eof_reached():
+		var line = f.get_line()
+		line += " "
+		returnString += (line + "\n")
+		index += 1
+	f.close()
+	return returnString
+
 
 func update_page(page):
 	currentPage = page;
 	$ColorRect/Content.text = pages[currentPage];
+	
+	if discoverable_info.has(page):
+		for info in discoverable_info[page]:
+			JournalManager.add_info(info);
 	
 	$"ColorRect/Page Count".bbcode_text = "[center]" + str(currentPage+1) + "/" + str(numPages) + "[/center]";
 	if currentPage == 0:

@@ -1,0 +1,26 @@
+To: Supervisor568 From: Supervisor567
+Date: 03/30/4,543,677,818
+Subject: The Keys to the Castle
+
+Thanks again for agreeing to take over for me, the last few centuries have felt longer than I thought they would. 
+
+I’ll be leaving things generally as is, I figure you’ll make your own changes as needed. One thing I should probably mention is that I set up the office door to lock once the new operator has figured out their task enough, at three successful completions. I used to keep the door open, but I had an incident a while back with an operator making their way into the office so I started keeping the door locked. It stays open at the start since you’ll probably need to make frequent visits at first to explain the job to them, and casting the unlock pattern so often is a pain.
+
+It really is crazy how much extra work the department has gotten the last few years, the residents downstairs have really picked up their growth lately and I worry how we’ll be able to keep up with things in the future.
+—--------------------------------------------------------------------------------------------
+To: Supervisor567 From: Supervisor568
+Date: 08/04/4,543,677,818
+Subject: Re: The Keys to the Castle
+
+Of course! You’ve been at your post for some time now, so it was about some time that someone took over.
+
+Yeah they really have learned how to multiply, haven’t they? Your door locking automation gave me an idea to automate this whole operation actually, it’s pretty straightforward anyways, and why should the vermin take up so much of our time. I found some old terminals in storage that could be used to handle the session setup and teardown.
+
+Incidentally, where was that unlocking pattern again? I can’t seem to find it.
+
+—---------------------------------------------------------------------------------------------
+To: Supervisor568 From: Supervisor567
+Date: 01/23/4,543,677,819
+Subject: Re: Re: The Keys to the Castle
+
+The pattern is in the safe in the office. It’s locked using a pretty trivial temporal lock, just to keep it out of the operator’s reach.

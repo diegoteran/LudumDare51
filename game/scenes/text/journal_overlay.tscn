@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/text/journal_overlay.gd" type="Script" id=1]
+[ext_resource path="res://scenes/text/text_template.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
