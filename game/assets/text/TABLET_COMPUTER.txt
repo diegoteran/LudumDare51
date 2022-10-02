@@ -1,0 +1,4 @@
+ERROR: Uncaught Error thrown: Bell is not [object object]
+at: PerceptualShifter.js
+at: FinalRestTransfer.js
+at: AutomateApeControl.ts

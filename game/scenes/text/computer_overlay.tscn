@@ -27,3 +27,14 @@ margin_left = 254.0
 margin_top = 142.0
 margin_right = 1010.0
 margin_bottom = 897.0
+
+[node name="Page Count" parent="Background" index="4"]
+margin_left = 529.0
+margin_top = 901.0
+margin_right = 685.0
+margin_bottom = 974.0
+
+[node name="Button" parent="." index="2"]
+margin_top = -447.0
+margin_right = 614.0
+margin_bottom = -360.0

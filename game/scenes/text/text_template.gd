@@ -51,7 +51,7 @@ func get_file_content(filepath):
 
 func update_page(page):
 	currentPage = page;
-	$Background/Content.text = pages[currentPage];
+	$Background/Content.bbcode_text = pages[currentPage];
 	
 	if discoverable_info.has(page):
 		for info in discoverable_info[page]:
@@ -71,12 +71,6 @@ func update_page(page):
 		$Background/ButtonRight.visible = true;
 		$Background/ButtonRight.disabled = false;
 
-func _on_Area2D_input_event(viewport, event, shape_idx):
-	if (event is InputEventMouseButton && event.pressed):
-		print("clicked");
-		queue_free();
-
-
 func _on_ButtonRight_pressed():
 	update_page(currentPage+1);
 	pass # Replace with function body.
@@ -84,4 +78,9 @@ func _on_ButtonRight_pressed():
 
 func _on_ButtonLeft_pressed():
 	update_page(currentPage-1);
+	pass # Replace with function body.
+
+
+func _on_Button_pressed():
+	queue_free();
 	pass # Replace with function body.

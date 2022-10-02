@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/rooms/h1.gd" type="Script" id=2]
@@ -7,6 +7,14 @@
 [ext_resource path="res://assets/Art/H-Final/Assets/Room_h1.png" type="Texture" id=5]
 [ext_resource path="res://scenes/objects/room_h/object_door_office_closed.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/objects/room_h/object_door_bell_open.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/text/papers_overlay.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/objects/object_text_inspect.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/text/computer_overlay.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/text/journal_overlay.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/text/tablet_computer_overlay.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/text/tablet_journal_overlay.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/text/journal_d_overlay.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/text/journal_b_overlay.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -38,7 +46,9 @@ locked_rooms = PoolStringArray( "RIGHT" )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" parent="AreaUp" index="0"]
+position = Vector2( -34, -757 )
 shape = SubResource( 1 )
+disabled = true
 
 [node name="CollisionShape2D" parent="AreaRight" index="0"]
 position = Vector2( 853, 82 )
@@ -65,3 +75,31 @@ position = Vector2( 856, 68 )
 [node name="CollisionShape2D" parent="AreaLeft" index="0"]
 position = Vector2( -855.563, 59 )
 shape = SubResource( 4 )
+
+[node name="computer" parent="." index="10" instance=ExtResource( 9 )]
+position = Vector2( 202, -429 )
+TEXT_OVERLAY = ExtResource( 10 )
+
+[node name="journal_personal" parent="." index="11" instance=ExtResource( 9 )]
+position = Vector2( -377, -117 )
+TEXT_OVERLAY = ExtResource( 11 )
+
+[node name="papersd" parent="." index="12" instance=ExtResource( 9 )]
+position = Vector2( 203, -105 )
+TEXT_OVERLAY = ExtResource( 8 )
+
+[node name="tablet_computer" parent="." index="13" instance=ExtResource( 9 )]
+position = Vector2( 577, -437 )
+TEXT_OVERLAY = ExtResource( 12 )
+
+[node name="journal_b" parent="." index="14" instance=ExtResource( 9 )]
+position = Vector2( 583, -89 )
+TEXT_OVERLAY = ExtResource( 15 )
+
+[node name="journal_d" parent="." index="15" instance=ExtResource( 9 )]
+position = Vector2( 169, 216 )
+TEXT_OVERLAY = ExtResource( 14 )
+
+[node name="tablet_journal" parent="." index="16" instance=ExtResource( 9 )]
+position = Vector2( 546, 221 )
+TEXT_OVERLAY = ExtResource( 13 )

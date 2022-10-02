@@ -3,5 +3,5 @@ extends "res://scenes/text/text_template.gd"
 
 func setup_pages():
 	pages = [];
-	file_pages = ["TABLET_COMPUTER.txt"]
+	file_pages = ["JOURNALB.txt"]
 

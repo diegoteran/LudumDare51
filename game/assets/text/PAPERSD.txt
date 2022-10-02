@@ -1,0 +1,7 @@
+[i]--You find some scrap paper on the desk--[/i]
+
+Out of the three operator rooms I was tasked with managing, I’m down to one working one left. 
+
+Room 3’s perceptual shifter broke down and the control terminal locked down due to that. Seems it did not reset the operator at the end of their shift. I’ll be locking that one for now, I’ll look into fixing it the next time I return.
+
+An operator in Room 2 had a mental breakdown and broke the control terminal present in their room during the time I was away. It seems that increasing the shift duration to a century was too much for their primitive brains to handle. I’ll be lowering the shift time to 5 minutes for any future operators, and should keep the remaining room working for the few decades I plan to be away.
