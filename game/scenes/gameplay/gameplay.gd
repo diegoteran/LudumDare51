@@ -19,7 +19,8 @@ func pre_start(params):
 
 # `start()` is called when the graphic transition ends.
 func start():
-	print("gameplay.gd: start() called")
+	Globals.start_world_timer()
+	Globals.start_second_timer()
 
 
 func _process(delta):
