@@ -110,11 +110,17 @@ locked_rooms = PoolStringArray( "LEFT" )
 [node name="Background" parent="." index="0"]
 texture = ExtResource( 4 )
 
+[node name="AreaUp" parent="." index="2"]
+visible = false
+
 [node name="CollisionShape2D" parent="AreaUp" index="0"]
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D" parent="AreaRight" index="0"]
 shape = SubResource( 4 )
+
+[node name="AreaDown" parent="." index="4"]
+visible = false
 
 [node name="CollisionShape2D" parent="AreaDown" index="0"]
 shape = SubResource( 5 )
