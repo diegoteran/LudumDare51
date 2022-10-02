@@ -1,0 +1,123 @@
+{
+	"events": [
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1664692451.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://assets/audio/Narrator_help_1.wav",
+			"volume": 0
+		},
+		{
+			"character": "character-1664692451.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "It seems you are having difficulty with your task."
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://assets/audio/Narrator_help_2.wav",
+			"volume": 0
+		},
+		{
+			"character": "character-1664692451.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "This will be forgiven only once, further instruction will now be provided."
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://assets/audio/Narrator_help_3.wav",
+			"volume": 0
+		},
+		{
+			"character": "character-1664692451.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "First find the lever in the middle of the room."
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://assets/audio/Narrator_help_4.wav",
+			"volume": 0
+		},
+		{
+			"character": "character-1664692451.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Then, drag the lever from the left towards the right."
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://assets/audio/Narrator_help_5.wav",
+			"volume": 0
+		},
+		{
+			"character": "character-1664692451.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Repeat every 10 seconds."
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://assets/audio/Narrator_help_6.wav",
+			"volume": 0
+		},
+		{
+			"character": "character-1664692451.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You will not be forgiven again."
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "unpause",
+				"target_node_path": "Globals"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1664695300.json",
+		"name": "help"
+	}
+}

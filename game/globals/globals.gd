@@ -9,6 +9,16 @@ var office_locked = false
 var office_visited = false
 var rooms_unlocked = false
 
+var paused = true;
+
+var one_fuckup_left = true;
+
+var successful_presses = 0;
+
+var operator_num = 34634643;
+
+const SHIFT_AMOUNT = 15;
+
 signal seconds_left(seconds_left)
 signal rooms_unlocked
 signal door_timer
@@ -23,7 +33,7 @@ func _ready():
 	emit_signal("seconds_left",  10)
 	
 	second_timer.wait_time = 1.5
-	world_timer.wait_time = 60 * 5.0
+	world_timer.wait_time = 60 * 2.0
 	door_timer.wait_time = 45
 
 func unlock_all_rooms():
@@ -38,17 +48,43 @@ func start_second_timer():
 	print("HUMANS CLEANSED")
 	second_timer.start()
 	seconds_left_to_cleanse = 10
+	successful_presses += 1;
+	
+	if successful_presses > 3:
+		one_fuckup_left = false;
+		print("OKAY TUTORIAL OVER");
+	
 	emit_signal("seconds_left",  10)
 
-func _on_WorldTimer_timeout():
-	print("WORLD TIMEOUTT")
 
+func unpause():
+	paused = false;
+
+func restart():
+	Game.restart_scene();
+
+func _on_WorldTimer_timeout():
+	paused = true;
+	_get_gameplay().start_dialog("ShiftEnd")
+
+func _get_gameplay():
+	return get_tree().get_root().get_node("/root/Gameplay");
 
 func _on_SecondTimer_timeout():
+	if (paused):
+		return;
 	seconds_left_to_cleanse -= 1
 	emit_signal("seconds_left",  seconds_left_to_cleanse)
 	
 	if seconds_left_to_cleanse == 0:
+		if one_fuckup_left:
+			one_fuckup_left = false;
+			paused = true;
+			start_second_timer();
+			_get_gameplay().start_dialog("help")
+		else:
+			paused = true;
+			_get_gameplay().start_dialog("termination")
 		print("TEN SECONDS PASSED")
 
 func _on_DoorTimer_timeout():

@@ -19,8 +19,21 @@ func pre_start(params):
 
 # `start()` is called when the graphic transition ends.
 func start():
+	# Reset all things in Globals
+	Globals.operator_num += 1;
+	Globals.one_fuckup_left = true;
+	Globals.paused = true;
+	Globals.successful_presses = 0;
+	# TODO(): RELOCK DOORS BETWEEN RUNS
+	
 	Globals.start_world_timer()
 	Globals.start_second_timer()
+	
+	Dialogic.set_variable("operator_number", Globals.operator_num)
+	start_dialog("start");
+
+func start_dialog(timeline):
+		add_child(Dialogic.start(timeline))
 
 
 func _process(delta):

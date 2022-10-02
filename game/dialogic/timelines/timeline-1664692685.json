@@ -1,0 +1,79 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[i] You wake up in a strange room with no memory of where you were before. [/i]"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "[i] A speaker next to you turns on [/i]"
+		},
+		{
+			"animation": "[Default]",
+			"animation_length": 0,
+			"change_mirror_portrait": false,
+			"change_z_index": false,
+			"character": "character-1664692451.json",
+			"event_id": "dialogic_002",
+			"mirror_portrait": false,
+			"portrait": "Default",
+			"portrait_definition": "",
+			"position": {
+				"0": false,
+				"1": false,
+				"2": false,
+				"3": false,
+				"4": false
+			},
+			"type": 0,
+			"z_index": 0
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://assets/audio/Narrator_1.wav",
+			"volume": 0
+		},
+		{
+			"character": "character-1664692451.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Welcome operator [operator_number]. Your task is simple, hit the lever every ten seconds."
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
+			"file": "res://assets/audio/Narrator_2.wav",
+			"volume": 0
+		},
+		{
+			"character": "character-1664692451.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Any deviation from this will result in your replacement."
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "unpause",
+				"target_node_path": "Globals"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1664692685.json",
+		"name": "start"
+	}
+}
