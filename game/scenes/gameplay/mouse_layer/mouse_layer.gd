@@ -114,6 +114,7 @@ func analyze_pattern():
 	
 	if is_circle(current_pattern):
 		print("CIRCLE")
+		Globals.change_time()
 		return CIRCLE
 	
 	return NONE

@@ -19,11 +19,14 @@ var operator_num = 34634643;
 
 var on_last_screen = false
 
+var is_night = false
+
 const SHIFT_AMOUNT = 15;
 
 signal seconds_left(seconds_left)
 signal rooms_unlocked
 signal door_timer
+signal is_night(value)
 
 onready var world_timer = $WorldTimer
 onready var second_timer = $SecondTimer
@@ -111,3 +114,7 @@ func disable_all_timers():
 func set_ui():
 	# Maybe remove lever
 	pass
+
+func change_time():
+	is_night = !is_night
+	emit_signal("is_night", is_night)
