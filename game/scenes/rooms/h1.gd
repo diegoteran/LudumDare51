@@ -1,6 +1,7 @@
 extends "res://scenes/rooms/room_template.gd"
 
 onready var door_office = $DoorOffice
+onready var door_bell = $DoorBell
 
 func _ready():
 # warning-ignore:return_value_discarded
@@ -24,9 +25,9 @@ func unlock_right():
 	if(locked_rooms.has("RIGHT")):
 		SoundFx.play_menu("unlock_door")
 		unlock_room("RIGHT")
+		door_bell.open_door()
 
 func door_timeout():
 	if !Globals.office_visited:
-		SoundFx.play_menu("close_door")
 		door_office.close_door()
 		locked_rooms.append("LEFT")

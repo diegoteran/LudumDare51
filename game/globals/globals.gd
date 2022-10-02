@@ -92,3 +92,5 @@ func _on_SecondTimer_timeout():
 func _on_DoorTimer_timeout():
 	office_locked = !office_visited
 	emit_signal("door_timer")
+	if office_locked:
+		SoundFx.play_menu("close_door")
