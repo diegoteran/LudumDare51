@@ -6,6 +6,7 @@ var sounds_path = "res://sound/sounds/"
 var sounds = {
 	"close_door" : load(sounds_path + "close_door.wav"),
 	"down" : load(sounds_path + "down.wav"),
+	"egg" : load(sounds_path + "egg.wav"),
 	"key_falls" : load(sounds_path + "key_falls.wav"),
 	"menu_move" : load(sounds_path + "menu_move.wav"),
 	"menu_select" : load(sounds_path + "menu_select.wav"),
