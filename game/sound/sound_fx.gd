@@ -6,6 +6,7 @@ var sounds = {
 	"menu_move" : load(sounds_path + "menu_move.wav"),
 	"menu_select" : load(sounds_path + "menu_select.wav"),
 	"transition" : load(sounds_path + "transition.wav"),
+	"unlock_door" : load(sounds_path + "unlock_door.wav"),
 }
 
 onready var sound_players = get_node("2D").get_children()
