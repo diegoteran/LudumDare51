@@ -12,5 +12,6 @@ func _ready():
 
 
 func object_clicked():
+	Globals.is_egg_down = true
 	SoundFx.play_menu("egg")
 	queue_free()

@@ -21,6 +21,9 @@ var on_last_screen = false
 
 var is_night = false
 
+var is_safe_open = false
+var is_egg_down = false
+
 const SHIFT_AMOUNT = 15;
 
 signal seconds_left(seconds_left)

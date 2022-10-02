@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Art/D-Final/Assets/Room_d2.png" type="Texture" id=2]
 [ext_resource path="res://scenes/objects/room_d/object_hourglass.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/objects/room_d/object_egg.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/objects/room_d/object_safe_closed.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/rooms/d2.gd" type="Script" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -22,12 +24,7 @@ resource_local_to_scene = true
 extents = Vector2( 94.25, 384.5 )
 
 [node name="Room3" instance=ExtResource( 1 )]
-adjacent_room_names = {
-"DOWN": "",
-"LEFT": "d1",
-"RIGHT": "d3",
-"UP": ""
-}
+script = ExtResource( 6 )
 
 [node name="Background" parent="." index="0"]
 texture = ExtResource( 2 )
@@ -50,7 +47,10 @@ shape = SubResource( 3 )
 [node name="CollisionShape2D" parent="AreaLeft" index="0"]
 shape = SubResource( 4 )
 
-[node name="Egg" parent="." index="6" instance=ExtResource( 4 )]
+[node name="SafeClosed" parent="." index="6" instance=ExtResource( 5 )]
+position = Vector2( -1, -88 )
 
-[node name="Hourglass" parent="." index="7" instance=ExtResource( 3 )]
+[node name="Egg" parent="." index="7" instance=ExtResource( 4 )]
+
+[node name="Hourglass" parent="." index="8" instance=ExtResource( 3 )]
 position = Vector2( -428, 222 )
