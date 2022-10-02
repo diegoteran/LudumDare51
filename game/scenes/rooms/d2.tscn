@@ -20,7 +20,7 @@ extents = Vector2( 323, 57.375 )
 resource_local_to_scene = true
 extents = Vector2( 94.25, 384.5 )
 
-[node name="Room" instance=ExtResource( 1 )]
+[node name="Room2" instance=ExtResource( 1 )]
 adjacent_room_names = {
 "DOWN": "",
 "LEFT": "d1",

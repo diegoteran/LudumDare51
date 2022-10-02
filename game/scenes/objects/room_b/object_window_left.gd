@@ -9,6 +9,7 @@ onready var tween = $Tween
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+# warning-ignore:return_value_discarded
 	Globals.connect("is_night", self, "is_night")
 	is_night(Globals.is_night)
 
