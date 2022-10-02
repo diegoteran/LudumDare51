@@ -13,7 +13,7 @@ extents = Vector2( 80.75, 315 )
 
 [sub_resource type="RectangleShape2D" id=3]
 resource_local_to_scene = true
-extents = Vector2( 323, 57.375 )
+extents = Vector2( 249, 169 )
 
 [sub_resource type="RectangleShape2D" id=4]
 resource_local_to_scene = true
@@ -37,6 +37,7 @@ shape = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D" parent="AreaDown" index="0"]
+position = Vector2( 542, 373 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D" parent="AreaLeft" index="0"]

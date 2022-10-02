@@ -16,6 +16,8 @@ func _ready():
 		
 	# bell door
 	if Globals.rooms_unlocked or Globals.unlocked_rooms["h1"].has("RIGHT"):
+		if !Globals.unlocked_rooms["h1"].has("RIGHT"):
+			Globals.unlocked_rooms["h1"].append("RIGHT")
 		open_door_bell()
 	
 	# office door

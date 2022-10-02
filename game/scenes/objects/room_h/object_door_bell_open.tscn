@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/Art/H-Final/Assets/Door_open.png" type="Texture" id=2]
 [ext_resource path="res://assets/Art/H-Final/Assets/Entrance_c.png" type="Texture" id=3]
 
-[sub_resource type="Shader" id=1]
+[sub_resource type="Shader" id=5]
 code = "shader_type canvas_item;
 
 uniform vec4 color : hint_color = vec4(0.0);
@@ -71,7 +71,7 @@ void fragment() {
 
 [sub_resource type="ShaderMaterial" id=2]
 resource_local_to_scene = true
-shader = SubResource( 1 )
+shader = SubResource( 5 )
 shader_param/color = Color( 0, 0, 0, 0 )
 shader_param/width = 6.607
 shader_param/pattern = 1

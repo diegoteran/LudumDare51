@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/rooms/d3.gd" type="Script" id=2]
 [ext_resource path="res://assets/Art/D-Final/Assets/Room_d3.png" type="Texture" id=3]
+[ext_resource path="res://scenes/objects/object_template.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Art/A-Final/Assets/Door_open.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -10,7 +12,7 @@ extents = Vector2( 323.5, 73.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
 resource_local_to_scene = true
-extents = Vector2( 80.75, 315 )
+extents = Vector2( 163.875, 535 )
 
 [sub_resource type="RectangleShape2D" id=3]
 resource_local_to_scene = true
@@ -19,6 +21,83 @@ extents = Vector2( 323, 57.375 )
 [sub_resource type="RectangleShape2D" id=4]
 resource_local_to_scene = true
 extents = Vector2( 94.25, 384.5 )
+
+[sub_resource type="Shader" id=5]
+code = "shader_type canvas_item;
+
+uniform vec4 color : hint_color = vec4(0.0);
+uniform float width : hint_range(0, 10) = 1.0;
+uniform int pattern : hint_range(0, 2) = 0; // diamond, circle, square
+uniform bool inside = false;
+uniform bool add_margins = true; // only useful when inside is false
+
+void vertex() {
+	if (add_margins) {
+		VERTEX += (UV * 2.0 - 1.0) * width;
+	}
+}
+
+bool hasContraryNeighbour(vec2 uv, vec2 texture_pixel_size, sampler2D texture) {
+	for (float i = -ceil(width); i <= ceil(width); i++) {
+		float x = abs(i) > width ? width * sign(i) : i;
+		float offset;
+		
+		if (pattern == 0) {
+			offset = width - abs(x);
+		} else if (pattern == 1) {
+			offset = floor(sqrt(pow(width + 0.5, 2) - x * x));
+		} else if (pattern == 2) {
+			offset = width;
+		}
+		
+		for (float j = -ceil(offset); j <= ceil(offset); j++) {
+			float y = abs(j) > offset ? offset * sign(j) : j;
+			vec2 xy = uv + texture_pixel_size * vec2(x, y);
+			
+			if ((xy != clamp(xy, vec2(0.0), vec2(1.0)) || texture(texture, xy).a == 0.0) == inside) {
+				return true;
+			}
+		}
+	}
+	
+	return false;
+}
+
+void fragment() {
+	
+	vec2 uv = UV;
+	
+	if (add_margins) {
+		vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(width * 2.0));
+		
+		uv = (uv - texture_pixel_size * width) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+		
+		if (uv != clamp(uv, vec2(0.0), vec2(1.0))) {
+			COLOR.a = 0.0;
+		} else {
+			COLOR = texture(TEXTURE, uv);
+		}
+	} else {
+		COLOR = texture(TEXTURE, uv);
+	}
+	
+	if ((COLOR.a > 0.0) == inside && hasContraryNeighbour(uv, TEXTURE_PIXEL_SIZE, TEXTURE)) {
+		COLOR.rgb = inside ? mix(COLOR.rgb, color.rgb, color.a) : color.rgb;
+		COLOR.a += (1.0 - COLOR.a) * color.a;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=6]
+resource_local_to_scene = true
+shader = SubResource( 5 )
+shader_param/color = Color( 0, 0, 0, 0 )
+shader_param/width = 6.607
+shader_param/pattern = 1
+shader_param/inside = false
+shader_param/add_margins = true
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 167, 536 )
 
 [node name="Room" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -36,6 +115,7 @@ texture = ExtResource( 3 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="AreaRight" index="0"]
+position = Vector2( 792.875, -1 )
 shape = SubResource( 2 )
 
 [node name="CollisionShape2D" parent="AreaDown" index="0"]
@@ -43,3 +123,16 @@ shape = SubResource( 3 )
 
 [node name="CollisionShape2D" parent="AreaLeft" index="0"]
 shape = SubResource( 4 )
+
+[node name="Object" parent="." index="6" instance=ExtResource( 4 )]
+position = Vector2( 790, -2 )
+
+[node name="Sprite" parent="Object" index="0"]
+material = SubResource( 6 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" parent="Object/Area2D" index="0"]
+shape = SubResource( 7 )
+
+[editable path="Object"]
