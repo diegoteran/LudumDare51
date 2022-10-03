@@ -94,6 +94,8 @@ texture = ExtResource( 2 )
 [node name="Earth" type="Sprite" parent="."]
 texture = ExtResource( 3 )
 
+[node name="Thunders" type="Node2D" parent="."]
+
 [node name="Frame" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 

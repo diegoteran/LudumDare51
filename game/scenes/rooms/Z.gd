@@ -23,5 +23,5 @@ func lever():
 
 func spawn_thunder():
 	var instance = THUNDER.instance()
-	add_child(instance)
+	$Thunders.add_child(instance)
 	instance.position = p.position + Vector2(rand_range(-0.5, 0.5) * 1000, 0)
