@@ -39,12 +39,10 @@ func get_file_content(filepath):
 	var returnString = "";
 	var full_filepath = "res://assets/text/" + filepath;
 	f.open(full_filepath, File.READ)
-	var index = 1
 	while not f.eof_reached():
 		var line = f.get_line()
 		line += " "
 		returnString += (line + "\n")
-		index += 1
 	f.close()
 	return returnString
 

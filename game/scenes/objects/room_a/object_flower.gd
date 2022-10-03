@@ -15,16 +15,14 @@ func _process(_delta):
 		hold_time = OS.get_ticks_msec()
 		return
 	
-	if OS.get_ticks_msec() - hold_time > 4000:
-			get_parent().start_anim()
-	
-	if Input.is_action_just_released("click") and mouse_in_object:
-		hold_time = OS.get_ticks_msec() - hold_time
-		print("hold_time  " + hold_time)
-		hold_time = 0
+	if Input.is_action_just_released("click"):
+		hold_time = OS.get_ticks_msec()
 	
 	if Input.is_action_just_pressed("click") and mouse_in_object:
 		hold_time = OS.get_ticks_msec()
+	
+	if OS.get_ticks_msec() - hold_time > 4000:
+			get_parent().start_anim()
 
 
 func object_clicked():
