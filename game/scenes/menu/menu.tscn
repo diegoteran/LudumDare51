@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/ui-theme.tres" type="Theme" id=1]
+[ext_resource path="res://assets/Art/UI/Title.png" type="Texture" id=2]
 [ext_resource path="res://assets/fonts/open-sans/open-sans-bold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://scenes/menu/menu.gd" type="Script" id=5]
 
@@ -20,14 +21,13 @@ anchor_bottom = 1.0
 theme = ExtResource( 1 )
 script = ExtResource( 5 )
 __meta__ = {
-"_edit_lock_": true,
 "_edit_use_anchors_": false
 }
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0.176471, 0.682353, 0.647059, 1 )
+texture = ExtResource( 2 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 anchor_right = 1.0
@@ -35,6 +35,7 @@ anchor_bottom = 1.0
 margin_bottom = -339.0
 
 [node name="Title" type="Label" parent="CenterContainer"]
+visible = false
 margin_left = 593.0
 margin_top = 329.0
 margin_right = 1326.0
@@ -51,10 +52,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -100.0
-margin_top = -34.0
-margin_right = 100.0
-margin_bottom = 130.0
+margin_left = -111.0
+margin_top = 227.0
+margin_right = 89.0
+margin_bottom = 391.0
 custom_constants/separation = 16
 
 [node name="PlayButton" type="Button" parent="VBoxContainer"]
@@ -89,14 +90,15 @@ margin_right = 198.0
 margin_bottom = -18.0
 
 [node name="GameVersion" type="Label" parent="Version"]
+visible = false
 margin_right = 182.0
 margin_bottom = 34.0
 text = "<x.y.z>"
 
 [node name="GodotVersion" type="Label" parent="Version"]
-margin_top = 38.0
+visible = false
 margin_right = 182.0
-margin_bottom = 72.0
+margin_bottom = 34.0
 custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 text = "<GodotVersion>"
 script = SubResource( 1 )
@@ -114,18 +116,20 @@ grow_horizontal = 0
 grow_vertical = 0
 
 [node name="MadeByLabel" type="Label" parent="Credits"]
-margin_right = 243.0
+margin_right = 131.0
 margin_bottom = 34.0
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "made by:"
 
 [node name="Developer1" type="Label" parent="Credits"]
 margin_top = 38.0
-margin_right = 243.0
-margin_bottom = 72.0
+margin_right = 131.0
+margin_bottom = 146.0
 grow_horizontal = 0
 custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
-text = "Crystal Bit community"
+text = "Diego
+Diego
+Natasha"
 
 [node name="Developer2" type="Label" parent="Credits"]
 visible = false
