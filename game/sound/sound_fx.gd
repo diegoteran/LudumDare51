@@ -15,6 +15,7 @@ var sounds = {
 	"locked_door" : load(sounds_path + "locked_door.wav"),
 	"pull" : load(sounds_path + "pull.wav"),
 	"right" : load(sounds_path + "right.wav"),
+	"screw" : load(sounds_path + "screw.wav"),
 	"shake" : load(sounds_path + "shake.wav"),
 	"thunder" : load(sounds_path + "thunder.wav"),
 	"tick" : load(sounds_path + "tick.wav"),

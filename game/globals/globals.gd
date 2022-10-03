@@ -103,7 +103,7 @@ func reset():
 	office_visited = false
 	rooms_unlocked = false
 	successful_presses = 0
-	operator_num += 34634643
+	operator_num += 1
 	on_last_screen = false
 	is_night = false
 	is_safe_open = false

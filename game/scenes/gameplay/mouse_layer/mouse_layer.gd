@@ -66,7 +66,7 @@ func check_sound(last_pattern):
 	if last_pattern in TELEPORT_PATTERN:
 		match last_pattern:
 			(RIGHT):
-				if Globals.on_last_screen:
+				if !Globals.on_last_screen:
 					SoundFx.play_menu("right")
 			(LEFT):
 				if Globals.current_room == "c1":

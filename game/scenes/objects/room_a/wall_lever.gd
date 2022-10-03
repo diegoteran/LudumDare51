@@ -12,6 +12,7 @@ func _ready():
 
 func _process(_delta):
 	if not (true in screws):
+		SoundFx.play_menu("egg")
 		Globals.lever_freed();
 		get_parent().get_node("wallhatch").visible = true;
 		queue_free();
@@ -49,23 +50,27 @@ func _input(event):
 
 func _on_screw1_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		SoundFx.play_menu("screw")
 		screws[0] = false;
 		$screw.visible = false;
 
 
 func _on_screw2_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		SoundFx.play_menu("screw")
 		screws[1] = false;
 		$screw2.visible = false;
 
 
 func _on_screw3_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		SoundFx.play_menu("screw")
 		screws[2] = false;
 		$screw3.visible = false;
 
 
 func _on_screw4_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed:
+		SoundFx.play_menu("screw")
 		screws[3] = false;
 		$screw4.visible = false;
