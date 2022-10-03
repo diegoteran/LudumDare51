@@ -30,6 +30,7 @@ signal seconds_left(seconds_left)
 signal rooms_unlocked
 signal door_timer
 signal is_night(value)
+signal lever_freed;
 
 onready var world_timer = $WorldTimer
 onready var second_timer = $SecondTimer
@@ -76,6 +77,7 @@ func restart():
 
 func lever_freed():
 	print("Lever off wall")
+	emit_signal("lever_freed")
 	pass;
 
 func _on_WorldTimer_timeout():

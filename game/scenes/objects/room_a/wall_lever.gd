@@ -33,7 +33,7 @@ func _on_LeverPull_input_event(_viewport, event, _shape_idx):
 func _input(event):
 	if event is InputEventMouseMotion:
 		if moving_lever:
-			var index = 0;
+			var index = -1;
 			for frame_start in frame_starts:
 				var mouse_pos = (event.position.x - start_pos)
 				if mouse_pos > frame_start:

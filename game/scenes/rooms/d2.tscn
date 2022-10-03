@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Art/D-Final/Assets/Room_d2.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scenes/rooms/d2.gd" type="Script" id=6]
 [ext_resource path="res://scenes/objects/room_d/object_safe_open.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/Art/D-Final/Assets/Table.png" type="Texture" id=8]
+[ext_resource path="res://scenes/text/journal_d_overlay.tscn" type="PackedScene" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -72,3 +73,9 @@ position = Vector2( 192, 1 )
 
 [node name="Hourglass" parent="." index="10" instance=ExtResource( 3 )]
 position = Vector2( -433, -4 )
+
+[node name="journal" parent="." index="11" instance=ExtResource( 9 )]
+visible = false
+position = Vector2( 151, -43 )
+
+[editable path="journal"]

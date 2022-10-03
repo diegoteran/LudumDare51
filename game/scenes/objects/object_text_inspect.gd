@@ -8,4 +8,5 @@ func object_clicked():
 	print("text inspect clicked");
 	var text = TEXT_OVERLAY.instance();
 	get_parent().add_child(text);
+	Globals.paused = true;
 	pass

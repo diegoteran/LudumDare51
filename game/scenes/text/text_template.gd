@@ -82,5 +82,6 @@ func _on_ButtonLeft_pressed():
 
 
 func _on_Button_pressed():
+	Globals.unpause();
 	queue_free();
 	pass # Replace with function body.

@@ -22,16 +22,22 @@ func _process(_delta):
 
 
 func _on_Area2D_mouse_entered():
+	if Globals.paused:
+		return;
 	if is_interactable:
 		sprite.material.set_shader_param('color', Color.white)
 	mouse_in_object = true
 
 
 func _on_Area2D_mouse_exited():
+	if Globals.paused:
+		return;
 	if is_interactable:
 		sprite.material.set_shader_param('color', Color.transparent)
 	mouse_in_object = false
 
 func object_clicked():
+	if Globals.paused:
+		return;
 	# Dont add code here, inherit/extend this script and override in future objects.
 	pass
