@@ -18,6 +18,7 @@ var is_egg_down = false
 var current_room = "a3"
 var has_notebook = false
 var has_lever = false;
+var is_flower_up = false
 
 var paused = true;
 
@@ -77,7 +78,6 @@ func lever_freed():
 	emit_signal("lever_freed")
 	has_lever = true;
 	JournalManager.add_info("L4")
-	pass;
 
 func notebook_acquired():
 	has_notebook = true;
@@ -111,6 +111,7 @@ func reset():
 	is_egg_down = false
 	has_lever = false
 	current_room = "a3"
+	is_flower_up = false
 
 func _on_SecondTimer_timeout():
 	if (paused):

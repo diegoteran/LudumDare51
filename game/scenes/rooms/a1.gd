@@ -9,6 +9,9 @@ func _ready():
 # warning-ignore:return_value_discarded
 	Globals.connect("rooms_unlocked", self, "unlock_left")
 	flower.connect("key_dropped", self, "on_key_dropped")
+	
+	if Globals.is_flower_up:
+		animationPlayer.play("Up")
 
 func on_key_dropped():
 	if(locked_rooms.has("LEFT")):
@@ -34,5 +37,6 @@ func play_down():
 	
 func start_anim():
 	animationPlayer.play("Monitor")
+	Globals.is_flower_up = true
 	if(locked_rooms.has("LEFT")):
 		unlock_left()

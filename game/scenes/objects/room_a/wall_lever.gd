@@ -8,7 +8,9 @@ var screws = [true, true, true, true]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if Globals.has_lever:
+		get_parent().get_node("wallhatch").visible = true;
+		queue_free()
 
 func _process(_delta):
 	if not (true in screws):
