@@ -134,6 +134,9 @@ func analyze_pattern():
 		print("CIRCLE")
 		Globals.change_time()
 		JournalManager.add_info("M1")
+		if Globals.current_room == "a3":
+			JournalManager.add_info("M3")
+			JournalManager.add_info("M3b")
 		return CIRCLE
 	
 	return NONE

@@ -13,7 +13,5 @@ func _ready():
 func is_night(value):
 	if value:
 		sprite.texture = night_texture
-		JournalManager.add_info("M3")
-		JournalManager.add_info("M3b")
 	else: 
 		sprite.texture = day_texture
