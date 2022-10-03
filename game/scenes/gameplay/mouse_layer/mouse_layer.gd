@@ -90,6 +90,7 @@ func check_patterns(last_pattern):
 		if patterns == TELEPORT_PATTERN:
 			print("TELEPOOOOORT")
 			Globals.teleport_input()
+			Globals.remove_notebook()
 			JournalManager.add_info("M5b")
 			patterns = []
 		else:

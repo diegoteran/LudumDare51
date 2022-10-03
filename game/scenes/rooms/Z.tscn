@@ -103,7 +103,7 @@ texture = ExtResource( 4 )
 position = Vector2( -1, -565 )
 
 [node name="TextInspect" parent="." instance=ExtResource( 6 )]
-position = Vector2( -736, 428 )
+position = Vector2( -18, 341 )
 TEXT_OVERLAY = ExtResource( 8 )
 
 [node name="Sprite" parent="TextInspect" index="0"]

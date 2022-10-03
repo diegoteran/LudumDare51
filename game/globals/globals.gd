@@ -32,6 +32,7 @@ signal lever_freed;
 signal get_notebook;
 signal lever
 signal bell(note)
+signal remove_notebook;
 
 onready var world_timer = $WorldTimer
 onready var second_timer = $SecondTimer
@@ -86,6 +87,9 @@ func lever_freed():
 func notebook_acquired():
 	has_notebook = true;
 	emit_signal("get_notebook")
+
+func remove_notebook():
+	emit_signal("remove_notebook")
 
 func _on_WorldTimer_timeout():
 	return;
