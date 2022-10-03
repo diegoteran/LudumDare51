@@ -30,7 +30,7 @@ var info_dict = {
 	"D3" : "There's a chalkboard in here with lots of symbols",
 	"D4" : "There's a safe somewhere in here, I wonder where it is?",
 	"D4b" : "The safe is behind the remarkable egg painting!",
-	"D5" : "The safe had some sort of temporal lock on it, I wonder if the hourglass is related?",
+	"D5" : "The safe had some sort of temporal lock on it, I wonder if the hourglass is related? The code was green, blue, green.",
 	"D5b" : "By using the time spell, I can open the safe!",
 	"titleC" : "The Bell Tower",
 	"C1" : "There's a strange pattern on the wall in this room",
@@ -48,6 +48,9 @@ var info_discovered = ["titleL", "L1", "titleA", "A1"];
 func add_info(info):
 	if not info in info_discovered:
 		info_discovered.append(info);
+		var pageTitle = ("title" + info[0]);
+		if not pageTitle in info_discovered:
+			info_discovered.append(pageTitle)
 
 func get_pages():
 	print("getting current pages")
