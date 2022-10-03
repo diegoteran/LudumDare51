@@ -44,6 +44,8 @@ var pages = [["titleL", "L1", "L2", "L3", "L4", "L5"], ["titleM", "M1", "M2", "M
 ["titleC", "C1", "C2", "C3"],]
 var info_discovered = ["titleL", "L1", "L2", "titleA", "A1"];
 
+var recent_info = []
+
 signal new_info;
 
 func test_signal():
@@ -54,6 +56,7 @@ func add_info(info):
 		print("new info")
 		emit_signal("new_info");
 		info_discovered.append(info);
+		recent_info.append(info)
 		var pageTitle = ("title" + info[0]);
 		if not pageTitle in info_discovered:
 			info_discovered.append(pageTitle)
@@ -66,10 +69,13 @@ func get_pages():
 		page_content = "";
 		for info in page:
 			if info in info_discovered:
+				if info in recent_info:
+					page_content += "**NEW** ";
 				page_content += info_dict[info] + "\n\n";
 		
 		if page_content.length() > 0:
 			curr_pages.append(page_content);
+	recent_info = [];
 
 	
 	return curr_pages;
