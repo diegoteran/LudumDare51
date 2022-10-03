@@ -22,3 +22,10 @@ func _on_Timer_timeout():
 	note += 1
 	if note < 5:
 		timer.start()
+
+func _on_Area2D_mouse_entered():
+	mouse_in_object = true
+	if Globals.paused:
+		return;
+	if is_interactable:
+		sprite.material.set_shader_param('color', Color.deeppink)

@@ -72,7 +72,7 @@ void fragment() {
 resource_local_to_scene = true
 shader = SubResource( 1 )
 shader_param/color = Color( 0, 0, 0, 0 )
-shader_param/width = 6.607
+shader_param/width = 7.0
 shader_param/pattern = 1
 shader_param/inside = false
 shader_param/add_margins = true
