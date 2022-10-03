@@ -18,8 +18,8 @@ func _process(_delta):
 	if Input.is_action_just_released("click") and mouse_in_object:
 		hold_time = OS.get_ticks_msec() - hold_time
 		print(hold_time)
-		if hold_time > 3000:
-			print("Start animation")
+		if hold_time > 4000:
+			get_parent().start_anim()
 		
 		hold_time = 0
 	
@@ -28,8 +28,8 @@ func _process(_delta):
 
 
 func object_clicked():
-	print("I AM FLOWER")
 	click_counter += 1
+	SoundFx.play_menu("shake", rand_range(0.9, 1.1))
 	
 	if click_counter == 3:
 		emit_signal("key_dropped")
