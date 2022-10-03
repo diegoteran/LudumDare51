@@ -6,4 +6,5 @@ func setup_pages():
 	file_pages = ["JOURNALZ.txt"]
 	
 func close():
+	Globals.unpause()
 	Globals.start_final_timer();

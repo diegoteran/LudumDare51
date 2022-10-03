@@ -22,6 +22,9 @@ var is_flower_up = false
 var key_seen_atleast_once = false
 var doors_opened_atleast_once = false
 
+var final_timer_ended = false;
+var final_timer_started = false
+
 var paused = true;
 
 const SHIFT_AMOUNT = 15;
@@ -131,6 +134,8 @@ func reset():
 	has_lever = false
 	current_room = "a3"
 	is_flower_up = false
+	final_timer_ended = false;
+	final_timer_started = false;
 
 func _on_SecondTimer_timeout():
 	if (paused):
@@ -166,7 +171,6 @@ func teleport_input():
 func disable_all_timers():
 	world_timer.stop()
 	door_timer.stop()
-	final_timer.stop()
 
 func set_ui():
 	# Maybe remove lever
@@ -178,7 +182,12 @@ func change_time():
 	emit_signal("is_night", is_night)
 
 func start_final_timer():
-	final_timer.start();
+	print("start timer")
+	if final_timer_ended:
+		_on_FinalRoomTimer_timeout()
+	elif not final_timer_started:
+		final_timer.start();
+	final_timer_started = true;
 
 func add_exit():
 	Game.change_scene("res://scenes/menu/menu.tscn", {
@@ -188,5 +197,9 @@ func add_exit():
 	pass;
 
 func _on_FinalRoomTimer_timeout():
+	print("timeout")
+	final_timer_ended = true;
+	if paused:
+		return
 	Globals._get_gameplay().start_dialog("ShiftEnd")
 	pass # Replace with function body.
