@@ -86,6 +86,7 @@ script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
+position = Vector2( 0, -144 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
