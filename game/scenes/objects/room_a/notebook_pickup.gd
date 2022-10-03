@@ -14,5 +14,7 @@ func _ready():
 
 func object_clicked():
 	Globals.notebook_acquired();
+	Globals.paused = true;
+	Globals._get_gameplay().start_dialog("hints")
 	queue_free();
 	pass

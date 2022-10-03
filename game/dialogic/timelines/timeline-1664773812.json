@@ -1,0 +1,53 @@
+{
+	"events": [
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "You just got a very helpful journal! It will keep track of all the important information you will encounter."
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Whenever it shakes like this:"
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "test_signal",
+				"target_node_path": "JournalManager"
+			},
+			"event_id": "dialogic_042"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "Then you will know that theres new information present in the journal that you've collected, maybe even a whole new page!"
+		},
+		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "So don't be afraid by the large walls of text, the journal will keep track of the important bit so read as much, [i] or as little [/i] as you want."
+		},
+		{
+			"call_node": {
+				"arguments": [
+
+				],
+				"method_name": "unpause",
+				"target_node_path": "Globals"
+			},
+			"event_id": "dialogic_042"
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.4.5",
+		"file": "timeline-1664773812.json",
+		"name": "hints"
+	}
+}
