@@ -41,6 +41,7 @@ func changed_rooms(dir):
 	current_room = adjacent_rooms[dir]
 	current_room.state = CURRENT
 	adjacent_room_names = current_room.adjacent_room_names
+			
 	
 	adjacent_rooms.erase(dir)
 	set_connections()

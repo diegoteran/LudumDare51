@@ -53,6 +53,20 @@ func _process(_delta):
 		return
 	
 	Globals.current_room = name
+	match name:
+		("d3"):
+			JournalManager.add_info("M5")
+			JournalManager.add_info("D3")
+			JournalManager.add_info("D2")
+			JournalManager.add_info("D4")
+		("b3"):
+			JournalManager.add_info("B1")
+		("b1"):
+			JournalManager.add_info("B3")
+		("c1"):
+			JournalManager.add_info("C3")
+		("c2"):
+			JournalManager.add_info("C2")
 	
 	if Input.is_action_just_pressed("click") and mouse_in_area != "":
 		if mouse_in_area in locked_rooms and !Globals.unlocked_rooms[name].has(mouse_in_area):
