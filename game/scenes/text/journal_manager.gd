@@ -10,7 +10,7 @@ var info_dict = {
 	"titleM" : "The Magic",
 	"M1" : "I can perform magic by clicking and holding the mouse and tracing patterns",
 	"M2" : "If I trace from left to right, as if I’m pulling the lever, I can reset the timer, even without the lever.",
-	"M3" : "If I trace the square found on the wall of room B, something happens [M3] [Unlock: time pattern in room",
+	"M3" : "If I trace the square found on the wall of room B, something happens",
 	"M3b" : "By tracing the square, I can make day into night and vice versa",
 	"M4" : "There's a symbol to unlock objects hidden behind the safe in the office, locked behind a temporal lock.",
 	"M4b" : "If I trace the hourglass symbol found in the safe of room I can unlock doors",
@@ -42,7 +42,7 @@ var info_dict = {
 var pages = [["titleL", "L1", "L2", "L3", "L4", "L5"], ["titleM", "M1", "M2", "M3", "M3b", "M4", "M4b", "M5", "M5b"],
  ["titleA", "A1", "A2", "A3"], ["titleB", "B1", "B2", "B3"], ["titleD", "D1", "D2", "D3", "D4", "D4b", "D5", "D5b"],
 ["titleC", "C1", "C2", "C3"],]
-var info_discovered = ["titleL", "L1", "titleA", "A1"];
+var info_discovered = ["titleL", "L1", "L2", "titleA", "A1"];
 
 
 func add_info(info):

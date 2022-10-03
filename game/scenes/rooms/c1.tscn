@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Art/C-Final/Assets/Room_c1.png" type="Texture" id=2]
 [ext_resource path="res://scenes/objects/room_c/object_bell.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/rooms/c1.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -21,12 +22,7 @@ resource_local_to_scene = true
 extents = Vector2( 94.25, 384.5 )
 
 [node name="Room3" instance=ExtResource( 1 )]
-adjacent_room_names = {
-"DOWN": "c2",
-"LEFT": "",
-"RIGHT": "",
-"UP": ""
-}
+script = ExtResource( 4 )
 
 [node name="Background" parent="." index="0"]
 texture = ExtResource( 2 )

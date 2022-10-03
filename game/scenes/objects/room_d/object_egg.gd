@@ -13,5 +13,7 @@ func _ready():
 
 func object_clicked():
 	Globals.is_egg_down = true
+	JournalManager.add_info("D4b")
+	JournalManager.add_info("D5")
 	SoundFx.play_menu("egg")
 	queue_free()

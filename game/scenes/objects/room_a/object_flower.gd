@@ -23,6 +23,7 @@ func _process(_delta):
 	
 	if OS.get_ticks_msec() - hold_time > 4000:
 			get_parent().start_anim()
+			JournalManager.add_info("A3")
 
 
 func object_clicked():
@@ -31,3 +32,4 @@ func object_clicked():
 	
 	if click_counter == 3:
 		emit_signal("key_dropped")
+		JournalManager.add_info("A2")
