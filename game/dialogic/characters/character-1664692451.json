@@ -13,7 +13,7 @@
 	"portraits": [
 		{
 			"name": "Default",
-			"path": "res://assets/Art/A-Final/Assets/speaker.png"
+			"path": "res://assets/Art/A-Final/Assets/Speaker.png"
 		}
 	],
 	"scale": 100,
