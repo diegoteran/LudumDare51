@@ -125,8 +125,8 @@ margin_bottom = 146.0
 grow_horizontal = 0
 custom_colors/font_color = Color( 0.92549, 0.92549, 0.92549, 1 )
 text = "Diego
-Diego
-Natasha"
+Natasha
+Diego"
 
 [node name="Developer2" type="Label" parent="Credits"]
 visible = false
