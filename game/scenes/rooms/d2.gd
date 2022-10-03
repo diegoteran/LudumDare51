@@ -7,7 +7,7 @@ extends "res://scenes/rooms/room_template.gd"
 onready var egg = $Egg
 onready var safe_closed = $SafeClosed
 onready var safe_open = $SafeOpen
-onready var journal = $journal
+onready var journal = $Journal
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
