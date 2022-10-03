@@ -15,9 +15,6 @@ onready var sprite = $Sprite
 onready var area = $Area2D
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
-	if !is_interactable:
-		remove_child(area)
 
 func _process(_delta):
 	if Input.is_action_just_pressed("click") and mouse_in_object:
@@ -25,12 +22,14 @@ func _process(_delta):
 
 
 func _on_Area2D_mouse_entered():
-	sprite.material.set_shader_param('color', Color.white)
+	if is_interactable:
+		sprite.material.set_shader_param('color', Color.white)
 	mouse_in_object = true
 
 
 func _on_Area2D_mouse_exited():
-	sprite.material.set_shader_param('color', Color.transparent)
+	if is_interactable:
+		sprite.material.set_shader_param('color', Color.transparent)
 	mouse_in_object = false
 
 func object_clicked():
