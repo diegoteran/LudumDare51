@@ -19,6 +19,8 @@ var sounds = {
 	"right" : load(sounds_path + "right.wav"),
 	"screw" : load(sounds_path + "screw.wav"),
 	"shake" : load(sounds_path + "shake.wav"),
+	"space" : load(sounds_path + "space.wav"),
+	"teleport" : load(sounds_path + "teleport.wav"),
 	"thunder" : load(sounds_path + "thunder.wav"),
 	"tick" : load(sounds_path + "tick.wav"),
 	"tock" : load(sounds_path + "tock.wav"),

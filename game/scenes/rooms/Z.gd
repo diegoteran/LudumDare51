@@ -10,6 +10,8 @@ onready var p = $Position2D
 func _ready():
 # warning-ignore:return_value_discarded
 	Globals.connect("lever", self, "lever")
+	SoundFx.play_menu("teleport", 0.5, 0)
+	SoundFx.play_menu("space", 1, 0)
 
 
 func _process(_delta):
