@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Art/C-Final/Assets/Room_c3.png" type="Texture" id=2]
 [ext_resource path="res://assets/Art/A-Final/Assets/Door_open.png" type="Texture" id=3]
 [ext_resource path="res://scenes/objects/object_template.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/text/tablet_computer_overlay.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/objects/object_text_inspect.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/Art/C-Final/Assets/Tablet.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -98,6 +101,80 @@ shader_param/add_margins = true
 [sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 166, 541 )
 
+[sub_resource type="Shader" id=8]
+code = "shader_type canvas_item;
+
+uniform vec4 color : hint_color = vec4(0.0);
+uniform float width : hint_range(0, 10) = 1.0;
+uniform int pattern : hint_range(0, 2) = 0; // diamond, circle, square
+uniform bool inside = false;
+uniform bool add_margins = true; // only useful when inside is false
+
+void vertex() {
+	if (add_margins) {
+		VERTEX += (UV * 2.0 - 1.0) * width;
+	}
+}
+
+bool hasContraryNeighbour(vec2 uv, vec2 texture_pixel_size, sampler2D texture) {
+	for (float i = -ceil(width); i <= ceil(width); i++) {
+		float x = abs(i) > width ? width * sign(i) : i;
+		float offset;
+		
+		if (pattern == 0) {
+			offset = width - abs(x);
+		} else if (pattern == 1) {
+			offset = floor(sqrt(pow(width + 0.5, 2) - x * x));
+		} else if (pattern == 2) {
+			offset = width;
+		}
+		
+		for (float j = -ceil(offset); j <= ceil(offset); j++) {
+			float y = abs(j) > offset ? offset * sign(j) : j;
+			vec2 xy = uv + texture_pixel_size * vec2(x, y);
+			
+			if ((xy != clamp(xy, vec2(0.0), vec2(1.0)) || texture(texture, xy).a == 0.0) == inside) {
+				return true;
+			}
+		}
+	}
+	
+	return false;
+}
+
+void fragment() {
+	
+	vec2 uv = UV;
+	
+	if (add_margins) {
+		vec2 texture_pixel_size = vec2(1.0) / (vec2(1.0) / TEXTURE_PIXEL_SIZE + vec2(width * 2.0));
+		
+		uv = (uv - texture_pixel_size * width) * TEXTURE_PIXEL_SIZE / texture_pixel_size;
+		
+		if (uv != clamp(uv, vec2(0.0), vec2(1.0))) {
+			COLOR.a = 0.0;
+		} else {
+			COLOR = texture(TEXTURE, uv);
+		}
+	} else {
+		COLOR = texture(TEXTURE, uv);
+	}
+	
+	if ((COLOR.a > 0.0) == inside && hasContraryNeighbour(uv, TEXTURE_PIXEL_SIZE, TEXTURE)) {
+		COLOR.rgb = inside ? mix(COLOR.rgb, color.rgb, color.a) : color.rgb;
+		COLOR.a += (1.0 - COLOR.a) * color.a;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id=9]
+resource_local_to_scene = true
+shader = SubResource( 8 )
+shader_param/color = Color( 0, 0, 0, 0 )
+shader_param/width = 1.0
+shader_param/pattern = 0
+shader_param/inside = false
+shader_param/add_margins = true
+
 [node name="Room" instance=ExtResource( 1 )]
 adjacent_room_names = {
 "DOWN": "",
@@ -140,4 +217,17 @@ texture = ExtResource( 3 )
 position = Vector2( -798, -1 )
 shape = SubResource( 7 )
 
+[node name="TextInspect" parent="." index="7" instance=ExtResource( 6 )]
+position = Vector2( -96, -38 )
+TEXT_OVERLAY = ExtResource( 5 )
+
+[node name="Sprite" parent="TextInspect" index="0"]
+material = SubResource( 9 )
+position = Vector2( 2, -76 )
+texture = ExtResource( 7 )
+
+[node name="CollisionShape2D" parent="TextInspect/Area2D" index="0"]
+position = Vector2( -10, -38 )
+
 [editable path="Object"]
+[editable path="TextInspect"]
