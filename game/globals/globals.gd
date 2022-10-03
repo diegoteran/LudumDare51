@@ -76,8 +76,6 @@ func unpause():
 	paused = false;
 
 func restart():
-	return;
-	#UNDO DEBUG
 	Game.restart_scene();
 
 func lever_freed():
