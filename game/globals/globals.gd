@@ -19,6 +19,8 @@ var current_room = "a3"
 var has_notebook = false
 var has_lever = false;
 var is_flower_up = false
+var key_seen_atleast_once = false
+var doors_opened_atleast_once = false
 
 var paused = true;
 
@@ -51,6 +53,9 @@ func unlock_all_rooms():
 	SoundFx.play_menu("unlock_door")
 	rooms_unlocked = true
 	emit_signal("rooms_unlocked")
+	if not doors_opened_atleast_once:
+		_get_gameplay().start_dialog("door_opens")
+		doors_opened_atleast_once = true;
 
 func start_world_timer():
 #	world_timer.start()

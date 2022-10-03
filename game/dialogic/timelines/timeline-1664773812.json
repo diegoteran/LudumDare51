@@ -35,6 +35,12 @@
 			"text": "So don't be afraid by the large walls of text, the journal will keep track of the important bit so read as much, [i] or as little [/i] as you want."
 		},
 		{
+			"character": "",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "And don't worry about your collected information being lost with your \"replacement\", the notebook will still be available with all its information for any future operators."
+		},
+		{
 			"call_node": {
 				"arguments": [
 

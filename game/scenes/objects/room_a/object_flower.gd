@@ -34,3 +34,6 @@ func object_clicked():
 	if click_counter == 3:
 		emit_signal("key_dropped")
 		JournalManager.add_info("A2")
+		if not Globals.key_seen_atleast_once:
+			Globals._get_gameplay().start_dialog("key")
+			Globals.key_seen_atleast_once = true;
