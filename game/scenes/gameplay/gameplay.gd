@@ -36,6 +36,8 @@ func _process(delta):
 
 func to_z():
 	var instance = Z_ROOM.instance()
-	add_child(instance)
 	print("some animation here")
-	$RoomManager.queue_free()
+	for node in $RoomManager.get_children():
+		node.queue_free()
+	
+	$RoomManager.add_child(instance)
