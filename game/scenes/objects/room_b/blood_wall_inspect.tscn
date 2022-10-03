@@ -1,10 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://scenes/objects/object_template.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/Art/D-Final/Assets/Safe_open.png" type="Texture" id=2]
-[ext_resource path="res://scenes/objects/room_d/object_safe_open.gd" type="Script" id=3]
-[ext_resource path="res://scenes/objects/room_d/safe_door_inspect.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/objects/object_pattern_inspect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/objects/object_inspect_template.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/objects/object_inspect_template.gd" type="Script" id=2]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -80,20 +77,8 @@ shader_param/pattern = 1
 shader_param/inside = false
 shader_param/add_margins = true
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 133.5, 188 )
-
-[node name="SafeOpen" instance=ExtResource( 1 )]
-script = ExtResource( 3 )
+[node name="Object" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
-texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2( 136.5, -31 )
-shape = SubResource( 3 )
-
-[node name="PatternInspect" parent="." index="2" instance=ExtResource( 5 )]
-position = Vector2( 123, -14 )
-PATTERN = ExtResource( 4 )
