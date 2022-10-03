@@ -29,6 +29,7 @@ func _process(_delta):
 func object_clicked():
 	click_counter += 1
 	SoundFx.play_menu("shake", rand_range(0.9, 1.1))
+	$AnimationPlayer.play("shake")
 	
 	if click_counter == 3:
 		emit_signal("key_dropped")
