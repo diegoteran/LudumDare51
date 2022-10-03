@@ -29,7 +29,7 @@ func _on_Area2D_mouse_entered():
 		sprite.material.set_shader_param('color', Color.white)
 
 func _unhandled_input(event):
-	if event is InputEventScreenTouch:
+	if event is InputEventScreenTouch and mouse_in_object:
 		if not event.is_pressed():  # touch released.
 			_on_Area2D_mouse_exited()
 
