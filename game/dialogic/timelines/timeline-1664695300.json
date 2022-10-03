@@ -67,6 +67,20 @@
 			"audio_bus": "Master",
 			"event_id": "dialogic_030",
 			"event_name": "AudioEvent",
+			"file": "res://assets/audio/Narrator_help_3_5.wav",
+			"volume": 0
+		},
+		{
+			"character": "character-1664692451.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "To find it, move left by clicking the left edge of the screen."
+		},
+		{
+			"audio": "play",
+			"audio_bus": "Master",
+			"event_id": "dialogic_030",
+			"event_name": "AudioEvent",
 			"file": "res://assets/audio/Narrator_help_4.wav",
 			"volume": 0
 		},
