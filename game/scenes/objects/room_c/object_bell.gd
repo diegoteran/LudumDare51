@@ -18,6 +18,7 @@ func object_clicked():
 
 func _on_Timer_timeout():
 	SoundFx.play_menu(CELESTIAL_PATTERN[note])
+	get_parent().note_played(CELESTIAL_PATTERN[note])
 	note += 1
 	if note < 5:
 		timer.start()

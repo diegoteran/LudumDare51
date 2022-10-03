@@ -23,6 +23,12 @@ extents = Vector2( 94.25, 384.5 )
 
 [node name="Room3" instance=ExtResource( 1 )]
 script = ExtResource( 4 )
+adjacent_room_names = {
+"DOWN": "c2",
+"LEFT": "",
+"RIGHT": "",
+"UP": ""
+}
 
 [node name="Background" parent="." index="0"]
 texture = ExtResource( 2 )

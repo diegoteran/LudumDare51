@@ -31,6 +31,7 @@ signal is_night(value)
 signal lever_freed;
 signal get_notebook;
 signal lever
+signal bell(note)
 
 onready var world_timer = $WorldTimer
 onready var second_timer = $SecondTimer
@@ -53,6 +54,9 @@ func unlock_all_rooms():
 func start_world_timer():
 #	world_timer.start()
 	door_timer.start()
+
+func bell_note(note):
+	emit_signal("bell", note)
 	
 func start_second_timer():
 	print("HUMANS CLEANSED")

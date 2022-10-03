@@ -68,15 +68,20 @@ func check_sound(last_pattern):
 			(RIGHT):
 				if !Globals.on_last_screen:
 					SoundFx.play_menu("right")
+					if Globals.current_room == "c1":
+						Globals.bell_note("right")
 			(LEFT):
 				if Globals.current_room == "c1":
 					SoundFx.play_menu("left")
+					Globals.bell_note("left")
 			(UP):
 				if Globals.current_room == "c1":
 					SoundFx.play_menu("up")
+					Globals.bell_note("up")
 			(DOWN):
 				if Globals.current_room == "c1":
 					SoundFx.play_menu("down")
+					Globals.bell_note("down")
 
 func check_patterns(last_pattern):
 	
