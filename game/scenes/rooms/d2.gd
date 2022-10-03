@@ -6,6 +6,7 @@ extends "res://scenes/rooms/room_template.gd"
 # var b = "text"
 onready var egg = $Egg
 onready var safe_closed = $SafeClosed
+onready var safe_open = $SafeOpen
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +15,10 @@ func _ready():
 	
 	if Globals.is_safe_open:
 		safe_closed.queue_free()
+		safe_open.visible = true
 
 
 func safe_opened():
-	Globals.safe_open = true
+	Globals.is_safe_open = true
+	safe_closed.queue_free()
+	safe_open.visible = true
