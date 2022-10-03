@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/objects/object_template.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/Art/A-Final/Assets/Hatch.png" type="Texture" id=2]
-[ext_resource path="res://scenes/objects/room_a/notebook_pickup.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Art/A-Final/Assets/Notebook.png" type="Texture" id=2]
+[ext_resource path="res://scenes/objects/room_a/notebook_pickup.gd" type="Script" id=3]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -79,13 +79,8 @@ shader_param/inside = false
 shader_param/add_margins = true
 
 [node name="Object" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
 texture = ExtResource( 2 )
-
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-disabled = true
-
-[node name="Object" parent="." index="2" instance=ExtResource( 3 )]
-position = Vector2( -7, 21 )

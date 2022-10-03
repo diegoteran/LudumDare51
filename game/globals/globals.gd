@@ -26,6 +26,9 @@ var is_egg_down = false
 
 var current_room = "a3"
 
+var has_notebook = false
+
+
 const SHIFT_AMOUNT = 15;
 
 signal seconds_left(seconds_left)
@@ -33,6 +36,7 @@ signal rooms_unlocked
 signal door_timer
 signal is_night(value)
 signal lever_freed;
+signal get_notebook;
 
 onready var world_timer = $WorldTimer
 onready var second_timer = $SecondTimer
@@ -68,7 +72,6 @@ func start_second_timer():
 	
 	emit_signal("seconds_left",  10)
 
-
 func unpause():
 	paused = false;
 
@@ -81,6 +84,10 @@ func lever_freed():
 	print("Lever off wall")
 	emit_signal("lever_freed")
 	pass;
+
+func notebook_acquired():
+	has_notebook = true;
+	emit_signal("get_notebook")
 
 func _on_WorldTimer_timeout():
 	paused = true;

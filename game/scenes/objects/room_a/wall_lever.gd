@@ -13,6 +13,7 @@ func _ready():
 func _process(_delta):
 	if not (true in screws):
 		Globals.lever_freed();
+		get_parent().get_node("wallhatch").visible = true;
 		queue_free();
 	
 
