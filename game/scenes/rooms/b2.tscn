@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Art/B-Final/Assets/Room_b2.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/Art/A-Final/Assets/Hatch.png" type="Texture" id=5]
 [ext_resource path="res://scenes/text/journal_b_overlay.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/objects/object_text_inspect.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/rooms/b2.gd" type="Script" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -173,6 +174,7 @@ shader_param/inside = false
 shader_param/add_margins = true
 
 [node name="Room" instance=ExtResource( 1 )]
+script = ExtResource( 8 )
 adjacent_room_names = {
 "DOWN": "",
 "LEFT": "b1",

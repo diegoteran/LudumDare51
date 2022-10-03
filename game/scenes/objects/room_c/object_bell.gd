@@ -14,6 +14,8 @@ func object_clicked():
 	timer.stop()
 	note = 0
 	_on_Timer_timeout()
+	JournalManager.add_info("C2")
+	JournalManager.add_info("C3")
 
 func _on_Timer_timeout():
 	SoundFx.play_menu(CELESTIAL_PATTERN[note])

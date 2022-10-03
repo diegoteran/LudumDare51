@@ -16,6 +16,7 @@ func _ready():
 func is_night(value):
 	if value:
 		tween.interpolate_property(bg, "modulate", Color.wheat, Color.darkblue, 2)
+		JournalManager.add_info("M3")
 	else: 
 		tween.interpolate_property(bg, "modulate", Color.darkblue, Color.wheat, 2)
 	tween.start()

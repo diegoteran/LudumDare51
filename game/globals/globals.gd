@@ -17,6 +17,7 @@ var is_safe_open = false
 var is_egg_down = false
 var current_room = "a3"
 var has_notebook = false
+var has_lever = false;
 
 var paused = true;
 
@@ -73,6 +74,8 @@ func restart():
 func lever_freed():
 	print("Lever off wall")
 	emit_signal("lever_freed")
+	has_lever = true;
+	JournalManager.add_info("L4")
 	pass;
 
 func notebook_acquired():
@@ -103,6 +106,7 @@ func reset():
 	is_night = false
 	is_safe_open = false
 	is_egg_down = false
+	has_lever = false
 	current_room = "a3"
 
 func _on_SecondTimer_timeout():

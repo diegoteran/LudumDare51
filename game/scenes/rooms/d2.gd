@@ -11,6 +11,9 @@ onready var journal = $Journal
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	JournalManager.add_info("M5")
+	JournalManager.add_info("D2")
+	JournalManager.add_info("D3")
 	if Globals.is_egg_down:
 		egg.queue_free()
 	
@@ -25,3 +28,4 @@ func safe_opened():
 	safe_closed.queue_free()
 	safe_open.visible = true
 	journal.visible = true
+	JournalManager.add_info("D5b")

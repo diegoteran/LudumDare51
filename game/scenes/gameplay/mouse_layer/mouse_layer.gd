@@ -84,6 +84,7 @@ func check_patterns(last_pattern):
 		if patterns == TELEPORT_PATTERN:
 			print("TELEPOOOOORT")
 			Globals.teleport_input()
+			JournalManager.add_info("M5b")
 			patterns = []
 		else:
 			patterns = []
@@ -110,6 +111,7 @@ func analyze_pattern():
 	
 	if is_right(current_pattern):
 		print("LEVER or RIGHT")
+		JournalManager.add_info("L3")
 		return RIGHT
 	
 	if is_down(current_pattern):
@@ -125,11 +127,13 @@ func analyze_pattern():
 	if is_hourglass(current_pattern):
 		print("HOURGLASS")
 		Globals.unlock_all_rooms()
+		JournalManager.add_info("M4b")
 		return HOURGLASS
 	
 	if is_circle(current_pattern):
 		print("CIRCLE")
 		Globals.change_time()
+		JournalManager.add_info("M1")
 		return CIRCLE
 	
 	return NONE
