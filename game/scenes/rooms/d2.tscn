@@ -60,10 +60,10 @@ position = Vector2( 153, -124 )
 [node name="SafeOpen" parent="." index="7" instance=ExtResource( 7 )]
 visible = false
 position = Vector2( 333, -49 )
+is_interactable = false
 
 [node name="Egg" parent="." index="8" instance=ExtResource( 4 )]
 position = Vector2( 192, 1 )
-is_interactable = false
 
 [node name="Hourglass" parent="." index="9" instance=ExtResource( 3 )]
 position = Vector2( -424, 24 )
