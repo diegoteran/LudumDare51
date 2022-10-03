@@ -48,6 +48,8 @@ func get_file_content(filepath):
 
 
 func update_page(page):
+	SoundFx.play_menu("paper")
+	
 	currentPage = page;
 	$Background/Content.bbcode_text = pages[currentPage];
 	

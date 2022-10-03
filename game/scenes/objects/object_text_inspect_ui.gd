@@ -15,6 +15,8 @@ func _ready():
 	pass # Replace with function body.
 
 func shake_anim():
+	if Globals.has_notebook:
+		SoundFx.play_menu("journal")
 	$AnimationPlayer.play("Shake")
 
 func add_notebook():
