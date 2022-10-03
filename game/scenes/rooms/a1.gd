@@ -26,6 +26,13 @@ func unlock_left():
 		
 		door_left.open_door()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func play_up():
+	SoundFx.play_menu("pull")
+
+func play_down():
+	SoundFx.play_menu("pull")
+	
+func start_anim():
+	animationPlayer.play("Monitor")
+	if(locked_rooms.has("LEFT")):
+		unlock_left()
