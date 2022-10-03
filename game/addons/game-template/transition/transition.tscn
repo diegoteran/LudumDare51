@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/fonts/open-sans/open-sans-regular.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://assets/sprites/icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/sprites/icon_bell.png" type="Texture" id=2]
 [ext_resource path="res://addons/game-template/transition/progress.gd" type="Script" id=3]
 [ext_resource path="res://addons/game-template/transition/transition.gd" type="Script" id=4]
 
@@ -316,8 +316,8 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -40.0
 margin_top = -99.0
-margin_right = 40.0
-margin_bottom = -19.0
+margin_right = 801.0
+margin_bottom = 813.0
 rect_rotation = -90.0
 rect_scale = Vector2( 0.6, 0.6 )
 rect_pivot_offset = Vector2( 40, 40 )
