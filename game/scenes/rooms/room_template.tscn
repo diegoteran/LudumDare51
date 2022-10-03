@@ -1,7 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/sprites/icon.png" type="Texture" id=1]
 [ext_resource path="res://scenes/rooms/room_template.gd" type="Script" id=2]
+[ext_resource path="res://assets/Art/UI/Arrow_right.png" type="Texture" id=3]
+[ext_resource path="res://assets/Art/UI/Arrow_up.png" type="Texture" id=4]
+[ext_resource path="res://assets/Art/UI/Arrow_left.png" type="Texture" id=5]
+[ext_resource path="res://assets/Art/UI/Arrow_down.png" type="Texture" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
@@ -57,6 +61,26 @@ shape = SubResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLeft"]
 position = Vector2( -865, -8 )
 shape = SubResource( 4 )
+
+[node name="left" type="Sprite" parent="."]
+visible = false
+position = Vector2( -870, -8 )
+texture = ExtResource( 5 )
+
+[node name="right" type="Sprite" parent="."]
+visible = false
+position = Vector2( 880, -4 )
+texture = ExtResource( 3 )
+
+[node name="up" type="Sprite" parent="."]
+visible = false
+position = Vector2( -1, -448 )
+texture = ExtResource( 4 )
+
+[node name="down" type="Sprite" parent="."]
+visible = false
+position = Vector2( -4, 468 )
+texture = ExtResource( 6 )
 
 [connection signal="mouse_entered" from="AreaUp" to="." method="_on_AreaUp_mouse_entered"]
 [connection signal="mouse_exited" from="AreaUp" to="." method="_on_AreaUp_mouse_exited"]

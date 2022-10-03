@@ -1,8 +1,8 @@
 Supervisor567:
-Thanks again for agreeing to take over for me! Just remember the [b]combination to the safe in the office upstairs is green blue green[b]. It’s locked using a pretty trivial temporal lock, just to keep it out of the operator’s reach.
+Thanks again for agreeing to take over for me! Just remember the [b]COMBINATION to the safe in the office upstairs is GREEN BLUE GREEN[b]. It’s locked using a pretty trivial temporal lock, just to keep it out of the operator’s reach.
 
 Supervisor568:
-Sounds good. Oh and I noticed the [b]door to the office upstairs gets unlocked at the start of each new operators shift[b]? Any reason for that?
+Sounds good. Oh and I noticed the [b]door to the office upstairs gets UNLOCKED at the start of each new operators shift[b]? Any reason for that?
 
 Supervisor567:
 Thats just so I could easily leave to go help them. Don't worry I set it up to lock after they figure out what to do.

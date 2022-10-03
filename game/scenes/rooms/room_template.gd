@@ -20,6 +20,11 @@ onready var arrow_down = load("res://assets/Art/UI/Arrow_down.png")
 onready var arrow_left = load("res://assets/Art/UI/Arrow_left.png")
 onready var arrow_right = load("res://assets/Art/UI/Arrow_right.png")
 
+onready var arrow_up_2 = $up
+onready var arrow_down_2 = $down
+onready var arrow_left_2 = $left
+onready var arrow_right_2 = $right
+
 enum {
 	CURRENT,
 	BORDER
@@ -91,7 +96,11 @@ func save_unlocked_room(room_name):
 
 func _on_AreaUp_mouse_entered():
 	mouse_in_area = "UP"
-	set_mouse_cursor(arrow_up)
+	if OS.has_feature('HTML5'):
+		arrow_up_2.visible = true
+	else:
+		set_mouse_cursor(arrow_up)
+
 
 
 func _on_AreaUp_mouse_exited():
@@ -101,7 +110,10 @@ func _on_AreaUp_mouse_exited():
 
 func _on_AreaRight_mouse_entered():
 	mouse_in_area = "RIGHT"
-	set_mouse_cursor(arrow_right)
+	if OS.has_feature('HTML5'):
+		arrow_right_2.visible = true
+	else:
+		set_mouse_cursor(arrow_right)
 
 
 func _on_AreaRight_mouse_exited():
@@ -111,8 +123,10 @@ func _on_AreaRight_mouse_exited():
 
 func _on_AreaDown_mouse_entered():
 	mouse_in_area = "DOWN"
-	set_mouse_cursor(arrow_down)
-
+	if OS.has_feature('HTML5'):
+		arrow_down_2.visible = true
+	else:
+		set_mouse_cursor(arrow_down)
 
 func _on_AreaDown_mouse_exited():
 	Input.set_custom_mouse_cursor(null)
@@ -121,15 +135,25 @@ func _on_AreaDown_mouse_exited():
 
 func _on_AreaLeft_mouse_entered():
 	mouse_in_area = "LEFT"
-	set_mouse_cursor(arrow_left)
+	if OS.has_feature('HTML5'):
+		arrow_left_2.visible = true
+	else:
+		set_mouse_cursor(arrow_left)
 
 
 func _on_AreaLeft_mouse_exited():
 	Input.set_custom_mouse_cursor(null)
 	mouse_exited()
 
+func _hide_all_arrows():
+	arrow_down_2.visible = false;
+	arrow_up_2.visible = false;
+	arrow_left_2.visible = false;
+	arrow_right_2.visible = false;
+
 func mouse_exited():
 	mouse_in_area = ""
+	_hide_all_arrows()
 
 func set_mouse_cursor(cursor):
 	Input.set_custom_mouse_cursor(cursor, 0, Vector2(41, 41))
