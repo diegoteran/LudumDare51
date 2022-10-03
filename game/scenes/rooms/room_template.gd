@@ -52,6 +52,8 @@ func _process(_delta):
 	if state == BORDER:
 		return
 	
+	Globals.current_room = name
+	
 	if Input.is_action_just_pressed("click") and mouse_in_area != "":
 		if mouse_in_area in locked_rooms and !Globals.unlocked_rooms[name].has(mouse_in_area):
 			SoundFx.play_menu("locked_door")

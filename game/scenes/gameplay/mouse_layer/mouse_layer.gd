@@ -67,6 +67,15 @@ func check_sound(last_pattern):
 		match last_pattern:
 			(RIGHT):
 				SoundFx.play_menu("right")
+			(LEFT):
+				if Globals.current_room == "c1":
+					SoundFx.play_menu("left")
+			(UP):
+				if Globals.current_room == "c1":
+					SoundFx.play_menu("up")
+			(DOWN):
+				if Globals.current_room == "c1":
+					SoundFx.play_menu("down")
 
 func check_patterns(last_pattern):
 	

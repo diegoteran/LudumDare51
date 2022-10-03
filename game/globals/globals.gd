@@ -24,6 +24,8 @@ var is_night = false
 var is_safe_open = false
 var is_egg_down = false
 
+var current_room = "a3"
+
 const SHIFT_AMOUNT = 15;
 
 signal seconds_left(seconds_left)
