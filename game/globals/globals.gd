@@ -166,6 +166,7 @@ func teleport_input():
 func disable_all_timers():
 	world_timer.stop()
 	door_timer.stop()
+	final_timer.stop()
 
 func set_ui():
 	# Maybe remove lever
