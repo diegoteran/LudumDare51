@@ -33,7 +33,6 @@ material = ExtResource( 7 )
 disabled = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="." index="2"]
-material = ExtResource( 7 )
 frames = SubResource( 3 )
 animation = "leverPull"
 
