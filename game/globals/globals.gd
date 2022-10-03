@@ -1,33 +1,24 @@
 extends Node
 
+# Reset
 var unlocked_rooms = {"a1": [], "a2": [], "a3": [], "h1": [], "h2": [],
 					  "b1": [], "b2": [], "b3": [], "c1": [], "c2": [], "c3": [],
 					  "d1": [], "d2": [], "d3": []}
-
 var seconds_left_to_cleanse = 0
 var office_locked = false
 var office_visited = false
 var rooms_unlocked = false
-
-var paused = true;
-
 var one_fuckup_left = true;
-
 var successful_presses = 0;
-
 var operator_num = 34634643;
-
 var on_last_screen = false
-
 var is_night = false
-
 var is_safe_open = false
 var is_egg_down = false
-
 var current_room = "a3"
-
 var has_notebook = false
 
+var paused = true;
 
 const SHIFT_AMOUNT = 15;
 
@@ -76,6 +67,7 @@ func unpause():
 	paused = false;
 
 func restart():
+	reset()
 	Game.restart_scene();
 
 func lever_freed():
@@ -96,6 +88,22 @@ func _get_gameplay():
 
 func lever_pulled():
 	start_second_timer()
+
+func reset():
+	unlocked_rooms = {"a1": [], "a2": [], "a3": [], "h1": [], "h2": [],
+					  "b1": [], "b2": [], "b3": [], "c1": [], "c2": [], "c3": [],
+					  "d1": [], "d2": [], "d3": []}
+	seconds_left_to_cleanse = 0
+	office_locked = false
+	office_visited = false
+	rooms_unlocked = false
+	successful_presses = 0
+	operator_num += 34634643
+	on_last_screen = false
+	is_night = false
+	is_safe_open = false
+	is_egg_down = false
+	current_room = "a3"
 
 func _on_SecondTimer_timeout():
 	if (paused):
