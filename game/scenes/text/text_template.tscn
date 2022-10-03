@@ -37,7 +37,7 @@ margin_top = 910.0
 margin_right = 1094.0
 margin_bottom = 1000.0
 theme = ExtResource( 2 )
-text = "RIGHT"
+text = "NEXT"
 
 [node name="ButtonLeft" type="Button" parent="Background"]
 margin_left = 73.0
@@ -45,7 +45,7 @@ margin_top = 898.0
 margin_right = 273.0
 margin_bottom = 988.0
 theme = ExtResource( 2 )
-text = "LEFT"
+text = "PREV"
 
 [node name="Content" type="RichTextLabel" parent="Background"]
 margin_left = 122.0
