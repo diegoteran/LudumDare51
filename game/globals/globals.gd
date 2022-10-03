@@ -28,6 +28,7 @@ signal door_timer
 signal is_night(value)
 signal lever_freed;
 signal get_notebook;
+signal lever
 
 onready var world_timer = $WorldTimer
 onready var second_timer = $SecondTimer
@@ -87,6 +88,7 @@ func _get_gameplay():
 	return get_tree().get_root().get_node("/root/Gameplay");
 
 func lever_pulled():
+	emit_signal("lever")
 	start_second_timer()
 
 func reset():

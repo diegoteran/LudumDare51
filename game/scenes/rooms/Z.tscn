@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/rooms/Z.gd" type="Script" id=1]
 [ext_resource path="res://assets/Art/Final room/Assets/Sky.png" type="Texture" id=2]
 [ext_resource path="res://assets/Art/Final room/Assets/Earth.png" type="Texture" id=3]
 [ext_resource path="res://assets/Art/Final room/Assets/Frame.png" type="Texture" id=4]
+[ext_resource path="res://scenes/objects/room_z/thunder.tscn" type="PackedScene" id=5]
 
 [node name="Z" type="Node2D"]
 z_index = -1
 script = ExtResource( 1 )
+THUNDER = ExtResource( 5 )
 
 [node name="Stars" type="Sprite" parent="."]
 texture = ExtResource( 2 )
@@ -17,3 +19,6 @@ texture = ExtResource( 3 )
 
 [node name="Frame" type="Sprite" parent="."]
 texture = ExtResource( 4 )
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( -1, -565 )
