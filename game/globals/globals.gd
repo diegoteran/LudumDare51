@@ -50,7 +50,7 @@ func unlock_all_rooms():
 	emit_signal("rooms_unlocked")
 
 func start_world_timer():
-	world_timer.start()
+#	world_timer.start()
 	door_timer.start()
 	
 func start_second_timer():
@@ -84,6 +84,7 @@ func notebook_acquired():
 	emit_signal("get_notebook")
 
 func _on_WorldTimer_timeout():
+	return;
 	paused = true;
 	_get_gameplay().start_dialog("ShiftEnd")
 
