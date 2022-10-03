@@ -21,7 +21,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("click") and mouse_in_object:
 		hold_time = OS.get_ticks_msec()
 	
-	if OS.get_ticks_msec() - hold_time > 4000:
+	if OS.get_ticks_msec() - hold_time > 3000:
 			get_parent().start_anim()
 			JournalManager.add_info("A3")
 

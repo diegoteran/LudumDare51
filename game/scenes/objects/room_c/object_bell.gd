@@ -2,7 +2,6 @@ extends "res://scenes/objects/object_template.gd"
 
 const CELESTIAL_PATTERN = ["right", "down", "up", "left", "down"]
 
-onready var player = $AudioStreamPlayer2D
 onready var timer = $Timer
 
 var note = 0

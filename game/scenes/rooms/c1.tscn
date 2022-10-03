@@ -50,4 +50,4 @@ visible = false
 shape = SubResource( 4 )
 
 [node name="Bell" parent="." index="6" instance=ExtResource( 3 )]
-position = Vector2( -34, -91 )
+position = Vector2( -747, -317 )

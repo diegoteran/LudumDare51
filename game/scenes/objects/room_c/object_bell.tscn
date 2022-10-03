@@ -79,17 +79,19 @@ shader_param/inside = false
 shader_param/add_margins = true
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 270.5, 324 )
+extents = Vector2( 127, 178 )
 
 [node name="Bell" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
 material = SubResource( 2 )
+position = Vector2( -3, -1 )
+scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2( -7.5, -38 )
+position = Vector2( -6, 6 )
 shape = SubResource( 3 )
 
 [node name="Timer" type="Timer" parent="." index="2"]

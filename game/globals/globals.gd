@@ -10,7 +10,7 @@ var office_visited = false
 var rooms_unlocked = false
 var one_fuckup_left = true;
 var successful_presses = 0;
-var operator_num = 34634643;
+var operator_num = 23;
 var on_last_screen = false
 var is_night = false
 var is_safe_open = false
@@ -40,7 +40,7 @@ func _ready():
 	seconds_left_to_cleanse = 10
 	emit_signal("seconds_left",  10)
 	
-	second_timer.wait_time = 1.5
+	second_timer.wait_time = 2
 	world_timer.wait_time = 60 * 2.0
 	door_timer.wait_time = 45
 
@@ -138,6 +138,7 @@ func _on_DoorTimer_timeout():
 
 func teleport_input():
 	on_last_screen = true
+	current_room = "z"
 	disable_all_timers()
 	set_ui()
 	_get_gameplay().to_z()
