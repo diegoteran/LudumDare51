@@ -77,7 +77,7 @@ func save_unlocked_room(room_name):
 
 func _on_AreaUp_mouse_entered():
 	mouse_in_area = "UP"
-	Input.set_custom_mouse_cursor(arrow_up)
+	set_mouse_cursor(arrow_up)
 
 
 func _on_AreaUp_mouse_exited():
@@ -87,7 +87,7 @@ func _on_AreaUp_mouse_exited():
 
 func _on_AreaRight_mouse_entered():
 	mouse_in_area = "RIGHT"
-	Input.set_custom_mouse_cursor(arrow_right)
+	set_mouse_cursor(arrow_right)
 
 
 func _on_AreaRight_mouse_exited():
@@ -97,7 +97,7 @@ func _on_AreaRight_mouse_exited():
 
 func _on_AreaDown_mouse_entered():
 	mouse_in_area = "DOWN"
-	Input.set_custom_mouse_cursor(arrow_down)
+	set_mouse_cursor(arrow_down)
 
 
 func _on_AreaDown_mouse_exited():
@@ -107,7 +107,7 @@ func _on_AreaDown_mouse_exited():
 
 func _on_AreaLeft_mouse_entered():
 	mouse_in_area = "LEFT"
-	Input.set_custom_mouse_cursor(arrow_left)
+	set_mouse_cursor(arrow_left)
 
 
 func _on_AreaLeft_mouse_exited():
@@ -116,3 +116,6 @@ func _on_AreaLeft_mouse_exited():
 
 func mouse_exited():
 	mouse_in_area = ""
+
+func set_mouse_cursor(cursor):
+	Input.set_custom_mouse_cursor(cursor, 0, Vector2(41, 41))

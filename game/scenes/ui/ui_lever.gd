@@ -1,6 +1,7 @@
 extends "res://scenes/objects/room_a/wall_lever.gd"
 
 func _ready():
+# warning-ignore:return_value_discarded
 	Globals.connect("lever_freed", self, "add_lever_to_ui")
 	visible = false;
 	start_pos = 300;

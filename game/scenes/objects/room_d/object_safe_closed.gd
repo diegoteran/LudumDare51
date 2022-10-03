@@ -26,7 +26,7 @@ func hourglass_clicked(is_blue):
 		if current_pattern == PATTERN:
 			get_parent().safe_opened()
 	else:
-		SoundFx.play_menu("fail", 0.8, -20)
+		SoundFx.play_menu("fail", 0.8, 0)
 		current_pattern = []
 		sprites[0].visible = false
 		sprites[1].visible = false
