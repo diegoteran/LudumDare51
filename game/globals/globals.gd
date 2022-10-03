@@ -35,10 +35,12 @@ signal get_notebook;
 signal lever
 signal bell(note)
 signal remove_notebook;
+signal complete_game;
 
 onready var world_timer = $WorldTimer
 onready var second_timer = $SecondTimer
 onready var door_timer = $DoorTimer
+onready var final_timer = $FinalRoomTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -48,6 +50,7 @@ func _ready():
 	second_timer.wait_time = 2
 	world_timer.wait_time = 60 * 2.0
 	door_timer.wait_time = 45
+	final_timer.wait_time = 15
 
 func unlock_all_rooms():
 	SoundFx.play_menu("unlock_door")
@@ -79,6 +82,9 @@ func start_second_timer():
 func unpause():
 	paused = false;
 
+func pause():
+	paused = true;
+	
 func restart():
 	reset()
 	Game.restart_scene();
@@ -169,3 +175,17 @@ func change_time():
 	SoundFx.play_menu("tick")
 	is_night = !is_night
 	emit_signal("is_night", is_night)
+
+func start_final_timer():
+	final_timer.start();
+
+func add_exit():
+	Game.change_scene("res://scenes/menu/menu.tscn", {
+		'show_progress_bar': false
+	})
+	SoundFx.play_menu("thunder", rand_range(0.8, 1.2), 0)
+	pass;
+
+func _on_FinalRoomTimer_timeout():
+	Globals._get_gameplay().start_dialog("ShiftEnd")
+	pass # Replace with function body.

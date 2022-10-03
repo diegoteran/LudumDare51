@@ -80,8 +80,11 @@ func _on_ButtonLeft_pressed():
 	update_page(currentPage-1);
 	pass # Replace with function body.
 
+func close():
+	pass;
 
 func _on_Button_pressed():
 	Globals.unpause();
+	close();
 	queue_free();
 	pass # Replace with function body.

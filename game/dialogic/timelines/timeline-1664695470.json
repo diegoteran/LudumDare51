@@ -53,7 +53,7 @@
 				"arguments": [
 
 				],
-				"method_name": "restart",
+				"method_name": "add_exit",
 				"target_node_path": "Globals"
 			},
 			"event_id": "dialogic_042"
