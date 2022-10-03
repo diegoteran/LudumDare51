@@ -23,4 +23,4 @@ To: Supervisor568 From: Supervisor567
 Date: 01/23/4,543,677,819
 Subject: Re: Re: The Keys to the Castle
 
-The pattern is in the safe in the office. It’s locked using a pretty trivial temporal lock, just to keep it out of the operator’s reach.
+The pattern is in the safe in the office. It’s locked using a pretty trivial temporal lock, just to keep it out of the operator’s reach. The code is green, blue, green.
