@@ -123,6 +123,9 @@ visible = false
 [node name="CollisionShape2D" parent="AreaDown" index="0"]
 shape = SubResource( 3 )
 
+[node name="AreaLeft" parent="." index="5"]
+visible = false
+
 [node name="CollisionShape2D" parent="AreaLeft" index="0"]
 shape = SubResource( 4 )
 
