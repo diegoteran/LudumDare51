@@ -109,7 +109,7 @@ func analyze_pattern():
 	print("Pattern generated: " + current_pattern)
 	
 	if len(current_pattern) > 10 or len(current_pattern) <= 0:
-		print("NICE TRY BITCH")
+		print("NICE TRY")
 		return NONE
 	
 	if is_up(current_pattern):
