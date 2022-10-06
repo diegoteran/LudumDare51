@@ -206,5 +206,4 @@ func _on_FinalRoomTimer_timeout():
 	final_timer_ended = true;
 	if paused:
 		return
-	reset()
 	Globals._get_gameplay().start_dialog("ShiftEnd")
