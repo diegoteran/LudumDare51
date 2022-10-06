@@ -85,17 +85,19 @@ func check_sound(last_pattern):
 				Globals.bell_note("down")
 
 func check_patterns(last_pattern):
+	# Have not done enough movements.
+	if patterns.size() < TELEPORT_PATTERN.size():
+		return
+	
+	if patterns.size() > TELEPORT_PATTERN.size():
+		patterns.pop_front()
+	
 	if patterns.size() == TELEPORT_PATTERN.size():
 		if patterns == TELEPORT_PATTERN:
 			print("TELEPOOOOORT")
 			Globals.teleport_input()
 			Globals.remove_notebook()
 			JournalManager.add_info("M5b")
-			patterns = []
-		else:
-			if Globals.current_room == "c1":
-				SoundFx.play_menu("fail")
-			patterns = []
 	
 
 func analyze_pattern():
@@ -126,8 +128,6 @@ func analyze_pattern():
 		print("DOWN")
 		return DOWN
 	
-	patterns = []
-	
 	if is_hourglass(current_pattern):
 		print("HOURGLASS")
 		Globals.unlock_all_rooms()
@@ -147,25 +147,25 @@ func analyze_pattern():
 
 func is_up(pattern):
 	if len(pattern) <= 3 and pattern[0] in "CD" and pattern[-1] in "AB":
-		patterns.append(UP)
+		patterns.push_back(UP)
 		return true
 	return false
 
 func is_right(pattern):
 	if len(pattern) <= 3 and pattern[0] in "AC" and pattern[-1] in "BD":
-		patterns.append(RIGHT)
+		patterns.push_back(RIGHT)
 		return true
 	return false
 
 func is_down(pattern):
 	if len(pattern) <= 3 and pattern[0] in "AB" and pattern[-1] in "CD":
-		patterns.append(DOWN)
+		patterns.push_back(DOWN)
 		return true
 	return false
 
 func is_left(pattern):
 	if len(pattern) <= 3 and pattern[0] in "BD" and pattern[-1] in "CA":
-		patterns.append(LEFT)
+		patterns.push_back(LEFT)
 		return true
 	return false
 
