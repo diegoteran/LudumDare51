@@ -4,6 +4,7 @@ export var THUNDER : PackedScene
 
 onready var stars = $Stars
 onready var earth = $Earth
+onready var thunders = $Thunders
 onready var p = $Position2D
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +18,7 @@ func _ready():
 func _process(_delta):
 	stars.position = (Game.size / 2 - get_global_mouse_position()) * 0.08
 	earth.position = (Game.size / 2 - get_global_mouse_position()) * 0.05
+	thunders.position = (Game.size / 2 - get_global_mouse_position()) * 0.03
 
 
 func lever():
@@ -25,5 +27,5 @@ func lever():
 
 func spawn_thunder():
 	var instance = THUNDER.instance()
-	$Thunders.add_child(instance)
+	thunders.add_child(instance)
 	instance.position = p.position + Vector2(rand_range(-0.5, 0.5) * 1000, 0)
