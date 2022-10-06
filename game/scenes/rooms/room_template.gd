@@ -79,7 +79,8 @@ func _process(_delta):
 		else:
 			emit_signal("click_move", mouse_in_area)
 	
-	movement_arrows()
+	if !Globals.paused:
+		movement_arrows()
 	
 func movement_arrows():
 	if Input.is_action_just_pressed("ui_right") and area_right.visible:
