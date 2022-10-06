@@ -21,7 +21,6 @@ var has_lever = false;
 var is_flower_up = false
 var key_seen_atleast_once = false
 var doors_opened_atleast_once = false
-
 var final_timer_ended = false;
 var final_timer_started = false
 
@@ -134,6 +133,8 @@ func reset():
 	has_lever = false
 	current_room = "a3"
 	is_flower_up = false
+	key_seen_atleast_once = false
+	doors_opened_atleast_once = false
 	final_timer_ended = false;
 	final_timer_started = false;
 
@@ -203,5 +204,5 @@ func _on_FinalRoomTimer_timeout():
 	final_timer_ended = true;
 	if paused:
 		return
+	reset()
 	Globals._get_gameplay().start_dialog("ShiftEnd")
-	pass # Replace with function body.
