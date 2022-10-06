@@ -57,6 +57,9 @@ func _process(_delta):
 	if state == BORDER:
 		return
 	
+	if Globals.paused:
+		return
+	
 	Globals.current_room = name
 	match name:
 		("d3"):
@@ -79,8 +82,7 @@ func _process(_delta):
 		else:
 			emit_signal("click_move", mouse_in_area)
 	
-	if !Globals.paused:
-		movement_arrows()
+	movement_arrows()
 	
 func movement_arrows():
 	if Input.is_action_just_pressed("ui_right") and area_right.visible:
