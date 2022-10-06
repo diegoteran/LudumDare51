@@ -10,7 +10,7 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
-extents = Vector2( 169, 221.875 )
+extents = Vector2( 229, 233.875 )
 
 [sub_resource type="RectangleShape2D" id=2]
 resource_local_to_scene = true
@@ -187,7 +187,7 @@ adjacent_room_names = {
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" parent="AreaUp" index="0"]
-position = Vector2( 524, -319.875 )
+position = Vector2( 530, -307.875 )
 shape = SubResource( 1 )
 
 [node name="AreaRight" parent="." index="3"]

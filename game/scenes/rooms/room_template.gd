@@ -78,6 +78,29 @@ func _process(_delta):
 			SoundFx.play_menu("locked_door")
 		else:
 			emit_signal("click_move", mouse_in_area)
+	
+	movement_arrows()
+	
+func movement_arrows():
+	if Input.is_action_just_pressed("ui_right") and area_right.visible:
+		move_arrow("RIGHT")
+	
+	if Input.is_action_just_pressed("ui_up") and area_up.visible:
+		move_arrow("UP")
+	
+	if Input.is_action_just_pressed("ui_left") and area_left.visible:
+		move_arrow("LEFT")
+	
+	if Input.is_action_just_pressed("ui_down") and area_down.visible:
+		move_arrow("DOWN")
+	
+
+func move_arrow(direction):
+	if direction in locked_rooms and !Globals.unlocked_rooms[name].has(direction):
+		SoundFx.play_menu("locked_door")
+	else:
+		emit_signal("click_move", direction)
+
 
 func unlock_rooms():
 	for room in Globals.unlocked_rooms[name]:

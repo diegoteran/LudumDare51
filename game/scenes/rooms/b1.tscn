@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/rooms/room_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Art/B-Final/Assets/Room_b1.png" type="Texture" id=2]
@@ -80,13 +80,16 @@ shader_param/pattern = 0
 shader_param/inside = false
 shader_param/add_margins = true
 
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 247, 219 )
+
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
 extents = Vector2( 323.5, 73.5 )
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=11]
 resource_local_to_scene = true
-extents = Vector2( 80.75, 315 )
+extents = Vector2( 95.25, 433.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 resource_local_to_scene = true
@@ -112,11 +115,11 @@ position = Vector2( 616, -234 )
 PATTERN = ExtResource( 5 )
 
 [node name="Sprite" parent="Background/PatternInspect" index="0"]
-visible = false
 material = SubResource( 9 )
 
 [node name="CollisionShape2D" parent="Background/PatternInspect/Area2D" index="0"]
-position = Vector2( 16, -10 )
+position = Vector2( -86, -71 )
+shape = SubResource( 10 )
 
 [node name="AreaUp" parent="." index="2"]
 visible = false
@@ -125,7 +128,8 @@ visible = false
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="AreaRight" index="0"]
-shape = SubResource( 2 )
+position = Vector2( 872.25, -19.5 )
+shape = SubResource( 11 )
 
 [node name="AreaDown" parent="." index="4"]
 visible = false

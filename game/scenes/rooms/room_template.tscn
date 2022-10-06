@@ -9,19 +9,19 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 resource_local_to_scene = true
-extents = Vector2( 323.5, 73.5 )
+extents = Vector2( 526.5, 92 )
 
 [sub_resource type="RectangleShape2D" id=2]
 resource_local_to_scene = true
-extents = Vector2( 80.75, 315 )
+extents = Vector2( 128.625, 433.5 )
 
 [sub_resource type="RectangleShape2D" id=3]
 resource_local_to_scene = true
-extents = Vector2( 323, 57.375 )
+extents = Vector2( 522.5, 94.875 )
 
 [sub_resource type="RectangleShape2D" id=4]
 resource_local_to_scene = true
-extents = Vector2( 94.25, 384.5 )
+extents = Vector2( 127.094, 487 )
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 2 )
@@ -41,25 +41,25 @@ uppercase = true
 [node name="AreaUp" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaUp"]
-position = Vector2( -4, -445.5 )
+position = Vector2( 34.5, -427 )
 shape = SubResource( 1 )
 
 [node name="AreaRight" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRight"]
-position = Vector2( 880.75, -7 )
+position = Vector2( 822.375, -19.5 )
 shape = SubResource( 2 )
 
 [node name="AreaDown" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDown"]
-position = Vector2( -35, 479.375 )
+position = Vector2( 20.5, 441.875 )
 shape = SubResource( 3 )
 
 [node name="AreaLeft" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLeft"]
-position = Vector2( -865, -8 )
+position = Vector2( -833.625, -14 )
 shape = SubResource( 4 )
 
 [node name="left" type="Sprite" parent="."]

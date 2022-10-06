@@ -17,7 +17,7 @@ extents = Vector2( 323, 57.375 )
 
 [sub_resource type="RectangleShape2D" id=4]
 resource_local_to_scene = true
-extents = Vector2( 94.25, 384.5 )
+extents = Vector2( 127.094, 487 )
 
 [node name="Room" instance=ExtResource( 1 )]
 adjacent_room_names = {
