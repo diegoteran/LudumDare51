@@ -156,6 +156,8 @@ func _on_SecondTimer_timeout():
 		print("TEN SECONDS PASSED")
 
 func _on_DoorTimer_timeout():
+	if rooms_unlocked:
+		return
 	office_locked = !office_visited
 	emit_signal("door_timer")
 	if office_locked:
