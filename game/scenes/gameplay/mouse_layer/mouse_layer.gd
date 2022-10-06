@@ -2,6 +2,7 @@ extends Node2D
 
 enum {
 	NONE,
+	SINGLE,
 	UP,
 	RIGHT,
 	DOWN,
@@ -57,35 +58,33 @@ func stop_mouse():
 	particles.emitting = false
 	
 	var pattern = analyze_pattern()
-	check_patterns(pattern)
-	check_sound(pattern)
+	if pattern in TELEPORT_PATTERN:
+		check_patterns(pattern)
+		check_sound(pattern)
 	if pattern == RIGHT:
 		Globals.lever_pulled()
 
 func check_sound(last_pattern):
-	if last_pattern in TELEPORT_PATTERN:
-		match last_pattern:
-			(RIGHT):
-				if !Globals.on_last_screen:
-					SoundFx.play_menu("right")
-					if Globals.current_room == "c1":
-						Globals.bell_note("right")
-			(LEFT):
+	match last_pattern:
+		(RIGHT):
+			if !Globals.on_last_screen:
+				SoundFx.play_menu("right")
 				if Globals.current_room == "c1":
-					SoundFx.play_menu("left")
-					Globals.bell_note("left")
-			(UP):
-				if Globals.current_room == "c1":
-					SoundFx.play_menu("up")
-					Globals.bell_note("up")
-			(DOWN):
-				if Globals.current_room == "c1":
-					SoundFx.play_menu("down")
-					Globals.bell_note("down")
+					Globals.bell_note("right")
+		(LEFT):
+			if Globals.current_room == "c1":
+				SoundFx.play_menu("left")
+				Globals.bell_note("left")
+		(UP):
+			if Globals.current_room == "c1":
+				SoundFx.play_menu("up")
+				Globals.bell_note("up")
+		(DOWN):
+			if Globals.current_room == "c1":
+				SoundFx.play_menu("down")
+				Globals.bell_note("down")
 
 func check_patterns(last_pattern):
-	
-	
 	if patterns.size() == TELEPORT_PATTERN.size():
 		if patterns == TELEPORT_PATTERN:
 			print("TELEPOOOOORT")
@@ -94,40 +93,38 @@ func check_patterns(last_pattern):
 			JournalManager.add_info("M5b")
 			patterns = []
 		else:
+			if Globals.current_room == "c1":
+				SoundFx.play_menu("fail")
 			patterns = []
-	
-	else:
-		for i in range(patterns.size()):
-			if patterns[i] != TELEPORT_PATTERN[i]:
-				patterns = []
-				if last_pattern in TELEPORT_PATTERN:
-					patterns = [last_pattern]
-				return
 	
 
 func analyze_pattern():
 	print("Pattern generated: " + current_pattern)
 	
-	if len(current_pattern) > 10 or len(current_pattern) <= 0:
+	if len(current_pattern) <= 1:
+		print("SINGLE")
+		return SINGLE
+	
+	if len(current_pattern) > 10:
 		print("NICE TRY")
 		return NONE
-	
-	if is_up(current_pattern):
-		print("UP")
-		return UP
 	
 	if is_right(current_pattern):
 		print("LEVER or RIGHT")
 		JournalManager.add_info("L3")
 		return RIGHT
 	
-	if is_down(current_pattern):
-		print("DOWN")
-		return DOWN
-	
 	if is_left(current_pattern):
 		print("LEFT")
 		return LEFT
+	
+	if is_up(current_pattern):
+		print("UP")
+		return UP
+	
+	if is_down(current_pattern):
+		print("DOWN")
+		return DOWN
 	
 	patterns = []
 	
