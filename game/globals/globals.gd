@@ -137,6 +137,7 @@ func reset():
 	doors_opened_atleast_once = false
 	final_timer_ended = false;
 	final_timer_started = false;
+	final_timer.stop()
 
 func _on_SecondTimer_timeout():
 	if (paused):
