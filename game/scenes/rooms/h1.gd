@@ -43,7 +43,7 @@ func unlock_right():
 		open_door_bell()
 
 func door_timeout():
-	if !Globals.office_visited:
+	if !Globals.office_visited and !Globals.rooms_unlocked:
 		close_door_office()
 		locked_rooms.append("LEFT")
 
