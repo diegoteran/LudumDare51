@@ -7,6 +7,11 @@ func _ready():
 	$Version/GodotVersion.text = "Godot %s" % Engine.get_version_info().string
 	# needed for gamepads to work
 	$VBoxContainer/PlayButton.grab_focus()
+	if Globals.game_over:
+		$VBoxContainer/PlayButton.queue_free()
+		$ThanksScreen.visible = true;
+	else:
+		$ThanksScreen.visible = false;
 	if OS.has_feature('HTML5'):
 		$VBoxContainer/ExitButton.queue_free()
 
@@ -51,3 +56,4 @@ func play_menu_move():
 	
 func play_menu_select():
 	SoundFx.play_menu("menu_select", rand_range(0.2, 0.4))
+

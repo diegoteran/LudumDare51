@@ -23,6 +23,7 @@ var key_seen_atleast_once = false
 var doors_opened_atleast_once = false
 var final_timer_ended = false;
 var final_timer_started = false
+var game_over = false;
 
 var paused = true;
 
@@ -37,7 +38,6 @@ signal get_notebook;
 signal lever
 signal bell(note)
 signal remove_notebook;
-signal complete_game;
 
 onready var world_timer = $WorldTimer
 onready var second_timer = $SecondTimer
@@ -194,6 +194,7 @@ func start_final_timer():
 	final_timer_started = true;
 
 func add_exit():
+	game_over = true;
 	Game.change_scene("res://scenes/menu/menu.tscn", {
 		'show_progress_bar': false
 	})
